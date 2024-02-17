@@ -1,4 +1,4 @@
-package com.ruben.spotify.api.model
+package com.ruben.spotify.api.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -28,9 +28,9 @@ data class Playlist(
 @Serializable
 data class Image(
     @SerialName("height")
-    val height: Int,
+    val height: Int?,
     @SerialName("width")
-    val width: Int,
+    val width: Int?,
     @SerialName("url")
     val url: String
 )

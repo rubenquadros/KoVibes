@@ -2,14 +2,18 @@ package com.ruben.spotify.api
 
 object SpotifyApi {
 
-    private val ktorService: KtorService by lazy { KtorService() }
+    private val authStorage: AuthStorage by lazy { AuthStorage() }
 
-    private val authService: AuthService by lazy { AuthServiceImpl(ktorService) }
+    private val ktorService: KtorService by lazy { KtorService(authStorage = authStorage) }
 
-    private val spotifyService: SpotifyService by lazy { SpotifyServiceImpl(authService, ktorService) }
+    private val spotifyService: SpotifyService by lazy {
+        SpotifyServiceImpl(
+            playlistApi = PlaylistApiImpl(ktorService)
+        )
+    }
 
     fun createSpotifyApi(clientId: String, clientSecret: String): SpotifyService {
-        authService.init(clientId, clientSecret)
+        authStorage.init(clientId, clientSecret)
         return spotifyService
     }
 }
