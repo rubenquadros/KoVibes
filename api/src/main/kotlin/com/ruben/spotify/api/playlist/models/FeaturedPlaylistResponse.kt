@@ -1,50 +1,7 @@
-package com.ruben.spotify.api
+package com.ruben.spotify.api.playlist.models
 
-import com.ruben.spotify.api.response.ErrorBody
-import io.ktor.client.request.get
-import io.ktor.http.parameters
-import io.ktor.http.path
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-
-internal interface PlaylistApi {
-
-    suspend fun getFeaturedPlaylists(
-        locale: String,
-        limit: Int,
-        offset: Int
-    ): ApiResponse<FeaturedPlaylistsResponse, ErrorBody>
-
-}
-
-internal class PlaylistApiImpl(
-    private val ktorService: KtorService,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
-) : PlaylistApi {
-    override suspend fun getFeaturedPlaylists(
-        locale: String,
-        limit: Int,
-        offset: Int
-    ): ApiResponse<FeaturedPlaylistsResponse, ErrorBody> {
-        val response = withContext(dispatcher) {
-            ktorService.client.get {
-                url {
-                    path("/v1/browse/featured-playlists")
-                }
-                parameters {
-                    this["locale"] = locale
-                    this["limit"] = limit.toString()
-                    this["offset"] = offset.toString()
-                }
-            }
-        }
-
-        return response.getParsedHttpResponse<FeaturedPlaylistsResponse, ErrorBody>()
-    }
-}
 
 @Serializable
 internal data class FeaturedPlaylistsResponse(
@@ -85,13 +42,13 @@ internal data class PlaylistItem(
     @SerialName("id")
     val id: String,
     @SerialName("images")
-    val images: List<PlaylistImage>,
+    val images: List<ImageInfo>,
     @SerialName("name")
     val name: String,
     @SerialName("owner")
     val owner: PlaylistOwner,
     @SerialName("primary_color")
-    val primaryColor: String,
+    val primaryColor: String?,
     @SerialName("public")
     val public: Boolean,
     @SerialName("snapshot_id")
@@ -102,22 +59,6 @@ internal data class PlaylistItem(
     val type: String,
     @SerialName("uri")
     val uri: String
-)
-
-@Serializable
-internal data class ExternalUrls(
-    @SerialName("spotify")
-    val spotify: String
-)
-
-@Serializable
-internal data class PlaylistImage(
-    @SerialName("height")
-    val height: Int?,
-    @SerialName("width")
-    val width: Int?,
-    @SerialName("url")
-    val url: String?
 )
 
 @Serializable

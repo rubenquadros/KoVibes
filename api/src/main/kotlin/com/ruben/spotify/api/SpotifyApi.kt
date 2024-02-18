@@ -1,5 +1,7 @@
 package com.ruben.spotify.api
 
+import com.ruben.spotify.api.playlist.PlaylistApiImpl
+
 object SpotifyApi {
 
     private val authStorage: AuthStorage by lazy { AuthStorage() }

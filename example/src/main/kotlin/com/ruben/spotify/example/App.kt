@@ -11,7 +11,10 @@ fun main() {
     )
 
     runBlocking {
-        val response = spotifyService.getFeaturedPlaylists()
-        println("Response :: $response")
+        val featuredPlaylistResponse = spotifyService.getFeaturedPlaylists()
+        println("FeaturedPlaylistResponse :: $featuredPlaylistResponse")
+
+        val playlistTracksResponse = spotifyService.getPlaylistTracks(id = "37i9dQZF1DXdGUQjVlqY2Q")
+        println("PlaylistTracksResponse :: $playlistTracksResponse")
     }
 }
