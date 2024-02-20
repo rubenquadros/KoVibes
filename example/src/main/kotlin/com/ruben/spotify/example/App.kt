@@ -16,5 +16,11 @@ fun main() {
 
         val playlistTracksResponse = spotifyService.getPlaylistTracks(id = "37i9dQZF1DXdGUQjVlqY2Q")
         println("PlaylistTracksResponse :: $playlistTracksResponse")
+
+        val genresResponse = spotifyService.getGenres()
+        println("GenresResponse :: $genresResponse")
+
+        val categoriesResponse = spotifyService.getCategories()
+        println("CategoriesResponse :: $categoriesResponse")
     }
 }

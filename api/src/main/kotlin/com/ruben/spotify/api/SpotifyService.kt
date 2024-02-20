@@ -1,7 +1,9 @@
 package com.ruben.spotify.api
 
+import com.ruben.spotify.api.response.Categories
 import com.ruben.spotify.api.response.ErrorBody
 import com.ruben.spotify.api.response.FeaturedPlaylists
+import com.ruben.spotify.api.response.Genres
 import com.ruben.spotify.api.response.PlaylistTracks
 import com.ruben.spotify.api.response.SpotifyApiResponse
 
@@ -19,4 +21,12 @@ interface SpotifyService {
         limit: Int = 20,
         offset: Int = 0
     ): SpotifyApiResponse<PlaylistTracks, ErrorBody>
+
+    suspend fun getGenres(): SpotifyApiResponse<Genres, ErrorBody>
+
+    suspend fun getCategories(
+        locale: String = "en_US",
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Categories, ErrorBody>
 }
