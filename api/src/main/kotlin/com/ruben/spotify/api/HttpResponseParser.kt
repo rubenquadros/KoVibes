@@ -9,7 +9,7 @@ import io.ktor.http.HttpStatusCode
 
 internal data class ApiResponse<API_RESPONSE, ERROR_RESPONSE>(
     val result: API_RESPONSE? = null,
-    val error: ERROR_RESPONSE? = null
+    val failure: ERROR_RESPONSE? = null
 )
 
 internal fun <API_RESPONSE, RESPONSE, ERROR>ApiResponse<API_RESPONSE, ERROR>.getParsedApiResponse(
@@ -18,7 +18,7 @@ internal fun <API_RESPONSE, RESPONSE, ERROR>ApiResponse<API_RESPONSE, ERROR>.get
     return if (result != null) {
         SpotifyApiResponse.Success(mapperBlock(result))
     } else {
-        SpotifyApiResponse.Error(error!!)
+        SpotifyApiResponse.Error(failure!!)
     }
 }
 
@@ -27,10 +27,10 @@ internal suspend inline fun <reified HTTP_RESPONSE, reified ERROR_RESPONSE> Http
         if (status == HttpStatusCode.OK) {
             ApiResponse(result = body<HTTP_RESPONSE>())
         } else {
-            ApiResponse(error = body<ERROR_RESPONSE>())
+            ApiResponse(failure = body<ERROR_RESPONSE>())
         }
     }.getOrElse {
         it.printStackTrace()
-        ApiResponse(error = ErrorBody(error = Error(status = 500, message = "Internal server error")) as ERROR_RESPONSE)
+        ApiResponse(failure = ErrorBody(error = Error(status = 500, message = "Internal server error")) as ERROR_RESPONSE)
     }
 }
