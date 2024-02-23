@@ -1,0 +1,44 @@
+# Kotlin Spotify API workflow
+
+name: Kotlin-Spotify-Api-CI
+
+# Controls when the workflow is triggered
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Build the project
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v3
+      - name: Build
+        run: ./gradlew api:build
+
+  #Check code coverage
+  code-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v3
+      - name: Run kover
+        run: ./gradlew api:koverXmlReport
+      - name: Verify code coverage
+        run: ./gradlew api:koverVerify
+      - name: Print code coverage
+        run: ./gradlew api:koverLog
+      - name: Upload report
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: rubenquadros/Kotlin-Spotify-Api
+          files: api/build/reports/kover/report.xml
+        continue-on-error: false
