@@ -1,8 +1,10 @@
 package com.ruben.spotify.api.playlist.models
 
+import com.ruben.spotify.api.ExcludeFromCoverage
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@ExcludeFromCoverage
 @Serializable
 internal data class PlaylistTracksResponse(
     @SerialName("href")
@@ -21,7 +23,7 @@ internal data class PlaylistTracksResponse(
     val items: List<TrackItem>
 )
 
-
+@ExcludeFromCoverage
 @Serializable
 internal data class TrackItem(
     @SerialName("added_at")
@@ -38,6 +40,7 @@ internal data class TrackItem(
     val videoThumbnail: VideoThumbnailInfo?
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class TrackAddedBy(
     @SerialName("external_urls")

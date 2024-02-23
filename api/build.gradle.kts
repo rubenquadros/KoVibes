@@ -36,3 +36,23 @@ tasks.test {
 kotlin {
     jvmToolchain(17)
 }
+
+koverReport {
+    filters {
+        excludes {
+            classes(
+                "com.ruben.spotify.api.response.*"
+            )
+            annotatedBy("com.ruben.spotify.api.ExcludeFromCoverage")
+        }
+    }
+
+    verify {
+        rule {
+            isEnabled = true
+            bound {
+                minValue = 82
+            }
+        }
+    }
+}

@@ -3,13 +3,16 @@ package com.ruben.spotify.api.test.browse
 import com.ruben.spotify.api.browse.BrowseApiImpl
 import com.ruben.spotify.api.test.MockKtorService
 import com.ruben.spotify.api.test.MockResponse
+import com.ruben.spotify.api.test.assertApiResponseFailure
+import com.ruben.spotify.api.test.assertApiResponseSuccess
+import com.ruben.spotify.api.test.errorResponsePath
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Test
 
 class BrowseApiTest {
 
     private val browseApi = BrowseApiImpl(
-        ktorService = MockKtorService.createMockKtorService(createMockConfig())
+        ktorService = MockKtorService.createMockKtorService(createMockBrowseConfig())
     )
 
     @Test
@@ -18,8 +21,9 @@ class BrowseApiTest {
 
         val successResponse = browseApi.getGenres()
 
-        assert(successResponse.failure == null)
-        assert(successResponse.result?.genres?.isNotEmpty() == true)
+        successResponse.assertApiResponseSuccess(
+            { successResponse.result?.genres?.isNotEmpty() == true }
+        )
     }
 
     @Test
@@ -28,8 +32,7 @@ class BrowseApiTest {
 
         val errorResponse = browseApi.getGenres()
 
-        assert(errorResponse.result == null)
-        assert(errorResponse.failure?.error?.status == 500)
+        errorResponse.assertApiResponseFailure()
     }
 
     @Test
@@ -38,9 +41,9 @@ class BrowseApiTest {
 
         val successResponse = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
 
-        assert(successResponse.failure == null)
-        assert(successResponse.result?.categories != null)
-        assert(successResponse.result?.categories!!.items.isNotEmpty())
+        successResponse.assertApiResponseSuccess(
+            { successResponse.result?.categories?.items?.isNotEmpty() == true }
+        )
     }
 
     @Test
@@ -49,18 +52,17 @@ class BrowseApiTest {
 
         val errorResponse = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
 
-        assert(errorResponse.result == null)
-        assert(errorResponse.failure?.error?.status == 500)
+        errorResponse.assertApiResponseFailure()
     }
 
-    private fun createMockConfig() = mapOf(
+    private fun createMockBrowseConfig() = mapOf(
         "available-genre-seeds" to MockResponse(
-            expectedSuccessResponsePath = "browse/genres_success.json",
-            expectedErrorResponsePath = "error.json"
+            expectedSuccessResponsePath = "browse/genres.json",
+            expectedErrorResponsePath = errorResponsePath
         ),
         "browse/categories" to MockResponse(
-            expectedSuccessResponsePath = "browse/categories_success.json",
-            expectedErrorResponsePath = "error.json"
+            expectedSuccessResponsePath = "browse/categories.json",
+            expectedErrorResponsePath = errorResponsePath
         )
     )
 }

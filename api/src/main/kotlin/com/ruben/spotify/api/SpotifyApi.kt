@@ -17,7 +17,22 @@ object SpotifyApi {
     }
 
     fun createSpotifyApi(clientId: String, clientSecret: String): SpotifyService {
+        validateClientId(clientId)
+        validateClientSecret(clientSecret)
+
         authStorage.init(clientId, clientSecret)
         return spotifyService
+    }
+
+    private fun validateClientId(clientId: String) {
+        require(clientId.isNotEmpty()) {
+            "Client Id cannot be empty."
+        }
+    }
+
+    private fun validateClientSecret(clientSecret: String) {
+        require(clientSecret.isNotEmpty()) {
+            "Client secret cannot be empty."
+        }
     }
 }

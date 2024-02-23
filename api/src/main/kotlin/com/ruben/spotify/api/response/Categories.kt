@@ -1,7 +1,7 @@
 package com.ruben.spotify.api.response
 
 data class Categories(
-    val categories: List<Category>,
+    val items: List<Category>,
     val isNext: Boolean
 )
 

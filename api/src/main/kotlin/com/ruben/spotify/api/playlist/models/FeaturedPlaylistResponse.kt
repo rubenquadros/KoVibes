@@ -1,8 +1,11 @@
 package com.ruben.spotify.api.playlist.models
 
+import com.ruben.spotify.api.ExcludeFromCoverage
+import com.ruben.spotify.api.models.ImageInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@ExcludeFromCoverage
 @Serializable
 internal data class FeaturedPlaylistsResponse(
     @SerialName("message")
@@ -11,6 +14,7 @@ internal data class FeaturedPlaylistsResponse(
     val playlists: Playlists
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class Playlists(
     @SerialName("href")
@@ -29,6 +33,7 @@ internal data class Playlists(
     val items: List<PlaylistItem>
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class PlaylistItem(
     @SerialName("collaborative")
@@ -61,6 +66,7 @@ internal data class PlaylistItem(
     val uri: String
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class PlaylistOwner(
     @SerialName("display_name")
@@ -77,6 +83,7 @@ internal data class PlaylistOwner(
     val uri: String
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class PlaylistTracks(
     @SerialName("href")

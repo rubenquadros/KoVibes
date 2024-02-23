@@ -1,15 +1,18 @@
 package com.ruben.spotify.api.browse.models
 
-import com.ruben.spotify.api.playlist.models.ImageInfo
+import com.ruben.spotify.api.ExcludeFromCoverage
+import com.ruben.spotify.api.models.ImageInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@ExcludeFromCoverage
 @Serializable
 internal data class CategoriesResponse(
     @SerialName("categories")
     val categories: CategoriesInfo
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class CategoriesInfo(
     @SerialName("href")
@@ -28,6 +31,7 @@ internal data class CategoriesInfo(
     val items: List<CategoryInfo>
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class CategoryInfo(
     @SerialName("href")

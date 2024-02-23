@@ -2,8 +2,8 @@ package com.ruben.spotify.api.playlist
 
 import com.ruben.spotify.api.mapper.toImage
 import com.ruben.spotify.api.mapper.toTrack
+import com.ruben.spotify.api.models.ImageInfo
 import com.ruben.spotify.api.playlist.models.FeaturedPlaylistsResponse
-import com.ruben.spotify.api.playlist.models.ImageInfo
 import com.ruben.spotify.api.playlist.models.PlaylistItem
 import com.ruben.spotify.api.playlist.models.PlaylistTracksResponse
 import com.ruben.spotify.api.playlist.models.TrackItem
@@ -13,7 +13,7 @@ import com.ruben.spotify.api.response.PlaylistTracks
 
 internal fun FeaturedPlaylistsResponse.toFeaturedPlayLists(): FeaturedPlaylists {
     return FeaturedPlaylists(
-        playlists = this.playlists.items.map { item: PlaylistItem ->
+        items = this.playlists.items.map { item: PlaylistItem ->
             Playlist(
                 collaborative = item.collaborative,
                 description = item.description.orEmpty(),

@@ -1,53 +1,37 @@
 package com.ruben.spotify.api.test
 
-import com.ruben.spotify.api.AuthStorage
-import com.ruben.spotify.api.KtorService
-import io.ktor.client.engine.mock.MockEngine
-import io.ktor.client.engine.mock.respond
-import io.ktor.http.Headers
-import io.ktor.http.HttpStatusCode
-import io.ktor.utils.io.ByteReadChannel
+import com.ruben.spotify.api.ApiResponse
+import com.ruben.spotify.api.response.Error
+import com.ruben.spotify.api.response.ErrorBody
+import com.ruben.spotify.api.response.SpotifyApiResponse
 import java.io.File
 
-object MockKtorService {
-    internal fun createMockKtorService(mockConfig: Map<String, MockResponse>): KtorService {
-        return KtorService(
-            authStorage = AuthStorage(),
-            engine = createMockEngine(mockConfig)
+fun getExpectedResponse(responsePath: String): String {
+    return File("src/test/resources/$responsePath").readText()
+}
+
+internal fun <API_RESPONSE> getApiResponse(
+    isSuccess: Boolean,
+    getResponse: () -> API_RESPONSE
+): ApiResponse<API_RESPONSE, ErrorBody> {
+    return if (isSuccess) {
+        ApiResponse(
+            failure = null,
+            result = getResponse()
+        )
+    } else {
+        ApiResponse(
+            result = null,
+            failure = ErrorBody(
+                error = Error(
+                    status = 400,
+                    message = "Bad request"
+                )
+            )
         )
     }
-
-    var isSuccess: Boolean = true
 }
 
-private fun createMockEngine(mockConfig: Map<String, MockResponse>): MockEngine = MockEngine {
-    val url = it.url.encodedPath
-
-    for (config in mockConfig.keys) {
-        if (url.contains(config)) {
-            val response = mockConfig[config]
-
-            assert(response != null) {
-                "There was no response for the path: $config"
-            }
-
-            val (status, body) = if (MockKtorService.isSuccess) {
-                HttpStatusCode.OK to getExpectedResponse(response!!.expectedSuccessResponsePath)
-            } else {
-                HttpStatusCode.BadRequest to getExpectedResponse(response!!.expectedErrorResponsePath)
-            }
-
-            return@MockEngine respond(
-                content = ByteReadChannel(body),
-                status = status,
-                headers = Headers.build { this["content-type"] = "application/json" }
-            )
-        }
-    }
-
-    throw Exception("Request url: $url does not match the config. Please check the provided config.")
-}
-
-private fun getExpectedResponse(responsePath: String): String {
-    return File("src/test/resources/$responsePath").readText()
+internal fun <SUCCESS, ERROR> SpotifyApiResponse<SUCCESS, ERROR>.getSuccessSpotifyApiResponse(): SUCCESS {
+    return (this as SpotifyApiResponse.Success).result
 }

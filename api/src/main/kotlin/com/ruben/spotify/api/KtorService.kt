@@ -94,7 +94,6 @@ internal class KtorService(
         }.getOrNull()
 
         return response?.let { httpResponse: HttpResponse ->
-            println("Got generate token response")
             if (httpResponse.status == HttpStatusCode.OK) {
                 val token = httpResponse.body<TokenResponse>().accessToken
                 authStorage.updateAccessToken(token)

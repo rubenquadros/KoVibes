@@ -1,8 +1,11 @@
 package com.ruben.spotify.api.playlist.models
 
+import com.ruben.spotify.api.ExcludeFromCoverage
+import com.ruben.spotify.api.models.ImageInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@ExcludeFromCoverage
 @Serializable
 internal data class TrackInfo(
     @SerialName("album")
@@ -49,6 +52,7 @@ internal data class TrackInfo(
     val uri: String
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class AlbumInfo(
     @SerialName("album_type")
@@ -81,6 +85,7 @@ internal data class AlbumInfo(
     val uri: String
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class ArtistInfo(
     @SerialName("external_urls")
@@ -105,6 +110,7 @@ internal data class ArtistInfo(
     val uri: String
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class FollowersInfo(
     @SerialName("href")
@@ -113,6 +119,7 @@ internal data class FollowersInfo(
     val total: Long
 )
 
+@ExcludeFromCoverage
 @Serializable
 internal data class RestrictionInfo(
     @SerialName("reason")

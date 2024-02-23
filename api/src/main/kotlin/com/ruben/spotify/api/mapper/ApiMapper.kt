@@ -1,8 +1,8 @@
 package com.ruben.spotify.api.mapper
 
+import com.ruben.spotify.api.models.ImageInfo
 import com.ruben.spotify.api.playlist.models.AlbumInfo
 import com.ruben.spotify.api.playlist.models.ArtistInfo
-import com.ruben.spotify.api.playlist.models.ImageInfo
 import com.ruben.spotify.api.playlist.models.RestrictionInfo
 import com.ruben.spotify.api.playlist.models.TrackInfo
 import com.ruben.spotify.api.response.Album
