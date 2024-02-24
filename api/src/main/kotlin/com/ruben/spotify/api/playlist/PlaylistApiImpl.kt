@@ -7,8 +7,8 @@ import com.ruben.spotify.api.playlist.models.FeaturedPlaylistsResponse
 import com.ruben.spotify.api.playlist.models.PlaylistTracksResponse
 import com.ruben.spotify.api.response.ErrorBody
 import io.ktor.client.request.get
-import io.ktor.http.parameters
 import io.ktor.http.path
+import io.ktor.util.StringValues
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,11 +26,14 @@ internal class PlaylistApiImpl(
             ktorService.client.get {
                 url {
                     path("/v1/browse/featured-playlists")
-                }
-                parameters {
-                    this["locale"] = locale
-                    this["limit"] = limit.toString()
-                    this["offset"] = offset.toString()
+
+                    parameters.appendAll(
+                        StringValues.build {
+                            this["locale"] = locale
+                            this["limit"] = limit.toString()
+                            this["offset"] = offset.toString()
+                        }
+                    )
                 }
             }
         }
@@ -49,12 +52,15 @@ internal class PlaylistApiImpl(
             ktorService.client.get {
                 url {
                     path("v1/playlists/$id/tracks")
-                }
-                parameters {
-                    market?.let { this["market"] = market }
-                    fields?.let { this["fields"] = fields }
-                    this["limit"] = limit.toString()
-                    this["offset"] = offset.toString()
+
+                    parameters.appendAll(
+                        StringValues.build {
+                            market?.let { this["market"] = market }
+                            fields?.let { this["fields"] = fields }
+                            this["limit"] = limit.toString()
+                            this["offset"] = offset.toString()
+                        }
+                    )
                 }
             }
         }

@@ -1,5 +1,10 @@
 package com.ruben.spotify.api.response
 
+data class Tracks(
+    val items: List<Track>,
+    val isNext: Boolean
+)
+
 data class Track(
     val addedAt: String?,
     val album: Album,

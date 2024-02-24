@@ -1,0 +1,664 @@
+{
+  "artists": {
+    "href": "https://api.spotify.com/v1/search?query=rap&type=artist&offset=0&limit=20",
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x"
+        },
+        "followers": {
+          "href": null,
+          "total": 23875672
+        },
+        "genres": [
+          "chicago rap",
+          "hip hop",
+          "rap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x",
+        "id": "5K4W6rqBFWDnAN6FQUkS6x",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb6e835a500e791bf9c27a422a",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051746e835a500e791bf9c27a422a",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1786e835a500e791bf9c27a422a",
+            "width": 160
+          }
+        ],
+        "name": "Kanye West",
+        "popularity": 94,
+        "type": "artist",
+        "uri": "spotify:artist:5K4W6rqBFWDnAN6FQUkS6x"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6NL31G53xThQXkFs7lDpL5"
+        },
+        "followers": {
+          "href": null,
+          "total": 256147
+        },
+        "genres": [
+          "alternative r&b",
+          "north carolina hip hop",
+          "trap queen"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6NL31G53xThQXkFs7lDpL5",
+        "id": "6NL31G53xThQXkFs7lDpL5",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebc6f550d246a5fdb238d5127e",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174c6f550d246a5fdb238d5127e",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178c6f550d246a5fdb238d5127e",
+            "width": 160
+          }
+        ],
+        "name": "Rapsody",
+        "popularity": 48,
+        "type": "artist",
+        "uri": "spotify:artist:6NL31G53xThQXkFs7lDpL5"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6g0Wah2YFtb1rFgKhUktlo"
+        },
+        "followers": {
+          "href": null,
+          "total": 541810
+        },
+        "genres": [
+          "funk",
+          "neo soul",
+          "soul"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6g0Wah2YFtb1rFgKhUktlo",
+        "id": "6g0Wah2YFtb1rFgKhUktlo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebf944d4f118f6796aabb1f642",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174f944d4f118f6796aabb1f642",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178f944d4f118f6796aabb1f642",
+            "width": 160
+          }
+        ],
+        "name": "Raphael Saadiq",
+        "popularity": 49,
+        "type": "artist",
+        "uri": "spotify:artist:6g0Wah2YFtb1rFgKhUktlo"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4tzxCsdhR0IIUNyzwrag4C"
+        },
+        "followers": {
+          "href": null,
+          "total": 144329
+        },
+        "genres": [
+          "g funk"
+        ],
+        "href": "https://api.spotify.com/v1/artists/4tzxCsdhR0IIUNyzwrag4C",
+        "id": "4tzxCsdhR0IIUNyzwrag4C",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb38c92da8c467e446b8eecd5b",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517438c92da8c467e446b8eecd5b",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17838c92da8c467e446b8eecd5b",
+            "width": 160
+          }
+        ],
+        "name": "Rappin' 4-Tay",
+        "popularity": 50,
+        "type": "artist",
+        "uri": "spotify:artist:4tzxCsdhR0IIUNyzwrag4C"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2U1vwQRYQmG7ypKJF1JTEb"
+        },
+        "followers": {
+          "href": null,
+          "total": 43005
+        },
+        "genres": [
+          "experimental hip hop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2U1vwQRYQmG7ypKJF1JTEb",
+        "id": "2U1vwQRYQmG7ypKJF1JTEb",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb7a395484383f1469c4f0d023",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051747a395484383f1469c4f0d023",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1787a395484383f1469c4f0d023",
+            "width": 160
+          }
+        ],
+        "name": "R.A.P. Ferreira",
+        "popularity": 38,
+        "type": "artist",
+        "uri": "spotify:artist:2U1vwQRYQmG7ypKJF1JTEb"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2hUYKu1x0UZQXvzCmggvSn"
+        },
+        "followers": {
+          "href": null,
+          "total": 661754
+        },
+        "genres": [
+          "alt z",
+          "singer-songwriter pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2hUYKu1x0UZQXvzCmggvSn",
+        "id": "2hUYKu1x0UZQXvzCmggvSn",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb4aed33b212aa2368af8818bf",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051744aed33b212aa2368af8818bf",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1784aed33b212aa2368af8818bf",
+            "width": 160
+          }
+        ],
+        "name": "Reneé Rapp",
+        "popularity": 75,
+        "type": "artist",
+        "uri": "spotify:artist:2hUYKu1x0UZQXvzCmggvSn"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4ek7HBx3DHvgnYo8vRXQm1"
+        },
+        "followers": {
+          "href": null,
+          "total": 230
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/4ek7HBx3DHvgnYo8vRXQm1",
+        "id": "4ek7HBx3DHvgnYo8vRXQm1",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2731333163049c328d12a8a1d60",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e021333163049c328d12a8a1d60",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048511333163049c328d12a8a1d60",
+            "width": 64
+          }
+        ],
+        "name": "RAP",
+        "popularity": 5,
+        "type": "artist",
+        "uri": "spotify:artist:4ek7HBx3DHvgnYo8vRXQm1"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1anyVhU62p31KFi8MEzkbf"
+        },
+        "followers": {
+          "href": null,
+          "total": 5914014
+        },
+        "genres": [
+          "chicago rap",
+          "conscious hip hop",
+          "hip hop",
+          "pop rap",
+          "rap",
+          "trap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1anyVhU62p31KFi8MEzkbf",
+        "id": "1anyVhU62p31KFi8MEzkbf",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eba6ab3c4df02cec59758ae3fa",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174a6ab3c4df02cec59758ae3fa",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178a6ab3c4df02cec59758ae3fa",
+            "width": 160
+          }
+        ],
+        "name": "Chance the Rapper",
+        "popularity": 72,
+        "type": "artist",
+        "uri": "spotify:artist:1anyVhU62p31KFi8MEzkbf"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/45HKRPnL9QuJO113fg5QkI"
+        },
+        "followers": {
+          "href": null,
+          "total": 4199
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/45HKRPnL9QuJO113fg5QkI",
+        "id": "45HKRPnL9QuJO113fg5QkI",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273a28017c61936eddb78243cf9",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02a28017c61936eddb78243cf9",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851a28017c61936eddb78243cf9",
+            "width": 64
+          }
+        ],
+        "name": "RAP",
+        "popularity": 7,
+        "type": "artist",
+        "uri": "spotify:artist:45HKRPnL9QuJO113fg5QkI"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3rJPS8fYBokXpYw1mS9wr0"
+        },
+        "followers": {
+          "href": null,
+          "total": 8406
+        },
+        "genres": [
+          "uk alternative pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3rJPS8fYBokXpYw1mS9wr0",
+        "id": "3rJPS8fYBokXpYw1mS9wr0",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebea19c2c142c43b3b3ebb03f2",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174ea19c2c142c43b3b3ebb03f2",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178ea19c2c142c43b3b3ebb03f2",
+            "width": 160
+          }
+        ],
+        "name": "Raphaella",
+        "popularity": 51,
+        "type": "artist",
+        "uri": "spotify:artist:3rJPS8fYBokXpYw1mS9wr0"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6kMfkFvkO2dFGHPhJSSh3i"
+        },
+        "followers": {
+          "href": null,
+          "total": 1592
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/6kMfkFvkO2dFGHPhJSSh3i",
+        "id": "6kMfkFvkO2dFGHPhJSSh3i",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273c7652fd0c6fea703aff54ef0",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02c7652fd0c6fea703aff54ef0",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851c7652fd0c6fea703aff54ef0",
+            "width": 64
+          }
+        ],
+        "name": "Rap",
+        "popularity": 3,
+        "type": "artist",
+        "uri": "spotify:artist:6kMfkFvkO2dFGHPhJSSh3i"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/796OSRuB0E9Hq55uTFL9U8"
+        },
+        "followers": {
+          "href": null,
+          "total": 815780
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/796OSRuB0E9Hq55uTFL9U8",
+        "id": "796OSRuB0E9Hq55uTFL9U8",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb96822478799640119e30628a",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517496822478799640119e30628a",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17896822478799640119e30628a",
+            "width": 160
+          }
+        ],
+        "name": "Raphael",
+        "popularity": 58,
+        "type": "artist",
+        "uri": "spotify:artist:796OSRuB0E9Hq55uTFL9U8"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6OR6NdRf6bR74MmZzL7xSP"
+        },
+        "followers": {
+          "href": null,
+          "total": 10
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/6OR6NdRf6bR74MmZzL7xSP",
+        "id": "6OR6NdRf6bR74MmZzL7xSP",
+        "images": [],
+        "name": "rAp",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:6OR6NdRf6bR74MmZzL7xSP"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1cPpd989kghzlZqfpP4KwL"
+        },
+        "followers": {
+          "href": null,
+          "total": 1501395
+        },
+        "genres": [
+          "v-pop",
+          "vietnamese hip hop",
+          "vietnamese melodic rap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/1cPpd989kghzlZqfpP4KwL",
+        "id": "1cPpd989kghzlZqfpP4KwL",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5ebeebd6e77e92be554a077fba7",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab67616100005174eebd6e77e92be554a077fba7",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f178eebd6e77e92be554a077fba7",
+            "width": 160
+          }
+        ],
+        "name": "RAP VIỆT",
+        "popularity": 57,
+        "type": "artist",
+        "uri": "spotify:artist:1cPpd989kghzlZqfpP4KwL"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/53vkQ2FFaAG05SFIEGvUtV"
+        },
+        "followers": {
+          "href": null,
+          "total": 159
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/53vkQ2FFaAG05SFIEGvUtV",
+        "id": "53vkQ2FFaAG05SFIEGvUtV",
+        "images": [],
+        "name": "RAP",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:53vkQ2FFaAG05SFIEGvUtV"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/451DVjaBuGYfvDfvG9MxaG"
+        },
+        "followers": {
+          "href": null,
+          "total": 331461
+        },
+        "genres": [
+          "boom bap espanol",
+          "rap conciencia",
+          "spanish hip hop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/451DVjaBuGYfvDfvG9MxaG",
+        "id": "451DVjaBuGYfvDfvG9MxaG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb42371251d4f698c96e2a3eef",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab6761610000517442371251d4f698c96e2a3eef",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f17842371251d4f698c96e2a3eef",
+            "width": 160
+          }
+        ],
+        "name": "Rapsusklei",
+        "popularity": 54,
+        "type": "artist",
+        "uri": "spotify:artist:451DVjaBuGYfvDfvG9MxaG"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1CeTZPly7LHsTHz5ifRLkM"
+        },
+        "followers": {
+          "href": null,
+          "total": 1
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/1CeTZPly7LHsTHz5ifRLkM",
+        "id": "1CeTZPly7LHsTHz5ifRLkM",
+        "images": [],
+        "name": "Rap",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:1CeTZPly7LHsTHz5ifRLkM"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4dnl0VOP7cS57VQOWxr3ND"
+        },
+        "followers": {
+          "href": null,
+          "total": 7029
+        },
+        "genres": [
+          "bedroom r&b"
+        ],
+        "href": "https://api.spotify.com/v1/artists/4dnl0VOP7cS57VQOWxr3ND",
+        "id": "4dnl0VOP7cS57VQOWxr3ND",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb5b31495d27009a930d522596",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051745b31495d27009a930d522596",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1785b31495d27009a930d522596",
+            "width": 160
+          }
+        ],
+        "name": "raph",
+        "popularity": 41,
+        "type": "artist",
+        "uri": "spotify:artist:4dnl0VOP7cS57VQOWxr3ND"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/7Ie5rvgRWJryyw0XgkZoJw"
+        },
+        "followers": {
+          "href": null,
+          "total": 274
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/7Ie5rvgRWJryyw0XgkZoJw",
+        "id": "7Ie5rvgRWJryyw0XgkZoJw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb1a48bc8412d44b045b963e80",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051741a48bc8412d44b045b963e80",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1781a48bc8412d44b045b963e80",
+            "width": 160
+          }
+        ],
+        "name": "RAP",
+        "popularity": 0,
+        "type": "artist",
+        "uri": "spotify:artist:7Ie5rvgRWJryyw0XgkZoJw"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2auC28zjQyVTsiZKNgPRGs"
+        },
+        "followers": {
+          "href": null,
+          "total": 15901316
+        },
+        "genres": [
+          "k-rap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2auC28zjQyVTsiZKNgPRGs",
+        "id": "2auC28zjQyVTsiZKNgPRGs",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab6761610000e5eb3b8f6208d84e28f63841e43c",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/ab676161000051743b8f6208d84e28f63841e43c",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ab6761610000f1783b8f6208d84e28f63841e43c",
+            "width": 160
+          }
+        ],
+        "name": "RM",
+        "popularity": 70,
+        "type": "artist",
+        "uri": "spotify:artist:2auC28zjQyVTsiZKNgPRGs"
+      }
+    ],
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/search?query=rap&type=artist&offset=20&limit=20",
+    "offset": 0,
+    "previous": null,
+    "total": 53
+  }
+}

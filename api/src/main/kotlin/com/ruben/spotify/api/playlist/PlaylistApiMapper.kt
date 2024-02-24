@@ -1,29 +1,18 @@
 package com.ruben.spotify.api.playlist
 
-import com.ruben.spotify.api.mapper.toImage
+import com.ruben.spotify.api.mapper.toPlayList
 import com.ruben.spotify.api.mapper.toTrack
-import com.ruben.spotify.api.models.ImageInfo
+import com.ruben.spotify.api.models.PlaylistInfo
 import com.ruben.spotify.api.playlist.models.FeaturedPlaylistsResponse
-import com.ruben.spotify.api.playlist.models.PlaylistItem
 import com.ruben.spotify.api.playlist.models.PlaylistTracksResponse
 import com.ruben.spotify.api.playlist.models.TrackItem
-import com.ruben.spotify.api.response.FeaturedPlaylists
-import com.ruben.spotify.api.response.Playlist
 import com.ruben.spotify.api.response.PlaylistTracks
+import com.ruben.spotify.api.response.Playlists
 
-internal fun FeaturedPlaylistsResponse.toFeaturedPlayLists(): FeaturedPlaylists {
-    return FeaturedPlaylists(
-        items = this.playlists.items.map { item: PlaylistItem ->
-            Playlist(
-                collaborative = item.collaborative,
-                description = item.description.orEmpty(),
-                id = item.id,
-                name = item.name,
-                public = item.public,
-                images = item.images.map { imageInfo: ImageInfo ->
-                    imageInfo.toImage()
-                }
-            )
+internal fun FeaturedPlaylistsResponse.toFeaturedPlayLists(): Playlists {
+    return Playlists(
+        items = this.playlists.items.map { item: PlaylistInfo ->
+            item.toPlayList()
         },
         isNext = this.playlists.next != null
     )

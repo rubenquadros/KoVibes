@@ -6,6 +6,7 @@ import com.ruben.spotify.api.response.ErrorBody
 import com.ruben.spotify.api.response.Genres
 
 internal interface BrowseApi {
+
     suspend fun getGenres(): ApiResponse<Genres, ErrorBody>
 
     suspend fun getCategories(

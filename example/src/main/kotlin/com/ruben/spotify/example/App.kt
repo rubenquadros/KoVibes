@@ -22,5 +22,8 @@ fun main() {
 
         val categoriesResponse = spotifyService.getCategories()
         println("CategoriesResponse :: $categoriesResponse")
+
+        val searchTrackResponse = spotifyService.searchTrack("rap")
+        println("SearchTrackResponse :: $searchTrackResponse")
     }
 }

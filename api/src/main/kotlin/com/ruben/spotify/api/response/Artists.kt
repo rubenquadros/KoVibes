@@ -1,5 +1,10 @@
 package com.ruben.spotify.api.response
 
+data class Artists(
+    val items: List<Artist>,
+    val isNext: Boolean
+)
+
 data class Artist(
     val followers: Long?,
     val genres: List<String>?,

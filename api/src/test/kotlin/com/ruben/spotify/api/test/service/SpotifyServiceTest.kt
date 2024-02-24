@@ -11,7 +11,8 @@ class SpotifyServiceTest {
 
     private val spotifyService = SpotifyServiceImpl(
         FakePlaylistApi(),
-        FakeBrowseApi()
+        FakeBrowseApi(),
+        FakeSearchApi()
     )
 
     @Test
@@ -21,7 +22,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getFeaturedPlaylists()
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() }
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
         )
     }
 
@@ -41,7 +43,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getPlaylistTracks("123")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().tracks.isNotEmpty() }
+            { response.getSuccessSpotifyApiResponse().tracks.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext.not() }
         )
     }
 
@@ -81,7 +84,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getCategories()
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() }
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
         )
     }
 
@@ -90,6 +94,90 @@ class SpotifyServiceTest {
         FakeBrowseApi.isSuccess = false
 
         val response = spotifyService.getCategories()
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when search tracks responds success then response is received`() = runTest {
+        FakeSearchApi.isSuccess = true
+
+        val response = spotifyService.searchTrack("rap")
+
+        response.assertSpotifyApiSuccess(
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
+        )
+    }
+
+    @Test
+    fun `when search tracks responds error then error is received`() = runTest {
+        FakeSearchApi.isSuccess = false
+
+        val response = spotifyService.searchTrack("rap")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when search artists responds success then response is received`() = runTest {
+        FakeSearchApi.isSuccess = true
+
+        val response = spotifyService.searchArtist("rap")
+
+        response.assertSpotifyApiSuccess(
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
+        )
+    }
+
+    @Test
+    fun `when search artists responds error then error is received`() = runTest {
+        FakeSearchApi.isSuccess = false
+
+        val response = spotifyService.searchArtist("rap")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when search albums responds success then response is received`() = runTest {
+        FakeSearchApi.isSuccess = true
+
+        val response = spotifyService.searchAlbum("rap")
+
+        response.assertSpotifyApiSuccess(
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
+        )
+    }
+
+    @Test
+    fun `when search albums responds error then error is received`() = runTest {
+        FakeSearchApi.isSuccess = false
+
+        val response = spotifyService.searchAlbum("rap")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when search playlists responds success then response is received`() = runTest {
+        FakeSearchApi.isSuccess = true
+
+        val response = spotifyService.searchPlaylist("rap")
+
+        response.assertSpotifyApiSuccess(
+            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
+            { response.getSuccessSpotifyApiResponse().isNext }
+        )
+    }
+
+    @Test
+    fun `when search playlists responds error then error is received`() = runTest {
+        FakeSearchApi.isSuccess = false
+
+        val response = spotifyService.searchPlaylist("rap")
 
         response.assertSpotifyApiError()
     }

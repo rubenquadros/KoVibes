@@ -1,6 +1,8 @@
 package com.ruben.spotify.api.playlist.models
 
 import com.ruben.spotify.api.ExcludeFromCoverage
+import com.ruben.spotify.api.models.ExternalUrls
+import com.ruben.spotify.api.models.TrackInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -20,7 +20,7 @@ object MockKtorService {
 }
 
 private fun createMockEngine(mockConfig: Map<String, MockResponse>): MockEngine = MockEngine {
-    val url = it.url.encodedPath
+    val url = it.url.toString()
 
     for (config in mockConfig.keys) {
         if (url.contains(config)) {

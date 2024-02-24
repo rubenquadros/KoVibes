@@ -19,14 +19,14 @@ class PlaylistApiTest {
     fun `when featured playlist spotify api responds success then result is received`() = runTest {
         MockKtorService.isSuccess = true
 
-        val successResponse = playlistApi.getFeaturedPlaylists(
+        val response = playlistApi.getFeaturedPlaylists(
             locale = "en_US",
             limit = 20,
             offset = 0
         )
 
-        successResponse.assertApiResponseSuccess(
-            { successResponse.result?.playlists?.items?.isNotEmpty() == true }
+        response.assertApiResponseSuccess(
+            { response.result?.playlists?.items?.isNotEmpty() == true }
         )
     }
 
@@ -34,20 +34,20 @@ class PlaylistApiTest {
     fun `when featured playlist spotify api responds error then failure is received`() = runTest {
         MockKtorService.isSuccess = false
 
-        val errorResponse = playlistApi.getFeaturedPlaylists(
+        val response = playlistApi.getFeaturedPlaylists(
             locale = "en_US",
             limit = 20,
             offset = 0
         )
 
-        errorResponse.assertApiResponseFailure()
+        response.assertApiResponseFailure()
     }
 
     @Test
     fun `when playlist tracks spotify api responds success then result is received`() = runTest {
         MockKtorService.isSuccess = true
 
-        val successResponse = playlistApi.getPlaylistTracks(
+        val response = playlistApi.getPlaylistTracks(
             id = "123",
             market = null,
             fields = null,
@@ -55,8 +55,8 @@ class PlaylistApiTest {
             offset = 0
         )
 
-        successResponse.assertApiResponseSuccess(
-            { successResponse.result?.items?.isNotEmpty() == true }
+        response.assertApiResponseSuccess(
+            { response.result?.items?.isNotEmpty() == true }
         )
     }
 
@@ -64,7 +64,7 @@ class PlaylistApiTest {
     fun `when playlist tracks spotify api responds error then failure is received`() = runTest {
         MockKtorService.isSuccess = false
 
-        val errorResponse = playlistApi.getPlaylistTracks(
+        val response = playlistApi.getPlaylistTracks(
             id = "123",
             market = null,
             fields = null,
@@ -72,7 +72,7 @@ class PlaylistApiTest {
             offset = 0
         )
 
-        errorResponse.assertApiResponseFailure()
+        response.assertApiResponseFailure()
     }
 
     private fun createMockPlaylistConfig() = mapOf(

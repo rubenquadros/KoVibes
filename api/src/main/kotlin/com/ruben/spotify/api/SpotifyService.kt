@@ -1,18 +1,22 @@
 package com.ruben.spotify.api
 
+import com.ruben.spotify.api.response.Albums
+import com.ruben.spotify.api.response.Artists
 import com.ruben.spotify.api.response.Categories
 import com.ruben.spotify.api.response.ErrorBody
-import com.ruben.spotify.api.response.FeaturedPlaylists
 import com.ruben.spotify.api.response.Genres
 import com.ruben.spotify.api.response.PlaylistTracks
+import com.ruben.spotify.api.response.Playlists
 import com.ruben.spotify.api.response.SpotifyApiResponse
+import com.ruben.spotify.api.response.Tracks
 
 interface SpotifyService {
+
     suspend fun getFeaturedPlaylists(
         locale: String = "en_US",
         limit: Int = 20,
         offset: Int = 0
-    ): SpotifyApiResponse<FeaturedPlaylists, ErrorBody>
+    ): SpotifyApiResponse<Playlists, ErrorBody>
 
     suspend fun getPlaylistTracks(
         id: String,
@@ -29,4 +33,34 @@ interface SpotifyService {
         limit: Int = 20,
         offset: Int = 0
     ): SpotifyApiResponse<Categories, ErrorBody>
+
+    suspend fun searchTrack(
+        query: String,
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Tracks, ErrorBody>
+
+    suspend fun searchAlbum(
+        query: String,
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Albums, ErrorBody>
+
+    suspend fun searchPlaylist(
+        query: String,
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Playlists, ErrorBody>
+
+    suspend fun searchArtist(
+        query: String,
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Artists, ErrorBody>
+
+
 }

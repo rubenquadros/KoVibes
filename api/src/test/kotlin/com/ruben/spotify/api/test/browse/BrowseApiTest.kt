@@ -19,10 +19,10 @@ class BrowseApiTest {
     fun `when genres spotify api responds success then result is received`() = runTest {
         MockKtorService.isSuccess = true
 
-        val successResponse = browseApi.getGenres()
+        val response = browseApi.getGenres()
 
-        successResponse.assertApiResponseSuccess(
-            { successResponse.result?.genres?.isNotEmpty() == true }
+        response.assertApiResponseSuccess(
+            { response.result?.genres?.isNotEmpty() == true }
         )
     }
 
@@ -30,19 +30,19 @@ class BrowseApiTest {
     fun `when genres spotify api responds error then failure is received`() = runTest {
         MockKtorService.isSuccess = false
 
-        val errorResponse = browseApi.getGenres()
+        val response = browseApi.getGenres()
 
-        errorResponse.assertApiResponseFailure()
+        response.assertApiResponseFailure()
     }
 
     @Test
     fun `when categories spotify api responds success then result is received`() = runTest {
         MockKtorService.isSuccess = true
 
-        val successResponse = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
+        val response = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
 
-        successResponse.assertApiResponseSuccess(
-            { successResponse.result?.categories?.items?.isNotEmpty() == true }
+        response.assertApiResponseSuccess(
+            { response.result?.categories?.items?.isNotEmpty() == true }
         )
     }
 
@@ -50,9 +50,9 @@ class BrowseApiTest {
     fun `when categories spotify api responds error then failure is received`() = runTest {
         MockKtorService.isSuccess = false
 
-        val errorResponse = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
+        val response = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
 
-        errorResponse.assertApiResponseFailure()
+        response.assertApiResponseFailure()
     }
 
     private fun createMockBrowseConfig() = mapOf(

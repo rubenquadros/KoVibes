@@ -1,3 +1,6 @@
+import kotlinx.kover.gradle.plugin.dsl.AggregationType
+import kotlinx.kover.gradle.plugin.dsl.MetricType
+
 plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
@@ -52,6 +55,8 @@ koverReport {
             isEnabled = true
             bound {
                 minValue = 82
+                metric = MetricType.LINE
+                aggregation = AggregationType.COVERED_PERCENTAGE
             }
         }
     }

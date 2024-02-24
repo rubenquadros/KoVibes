@@ -1,6 +1,6 @@
 package com.ruben.spotify.api.response
 
-data class FeaturedPlaylists(
+data class Playlists(
     val items: List<Playlist>,
     val isNext: Boolean
 )

@@ -7,8 +7,8 @@ import com.ruben.spotify.api.getParsedHttpResponse
 import com.ruben.spotify.api.response.ErrorBody
 import com.ruben.spotify.api.response.Genres
 import io.ktor.client.request.get
-import io.ktor.http.parameters
 import io.ktor.http.path
+import io.ktor.util.StringValues
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -38,11 +38,14 @@ internal class BrowseApiImpl(
             ktorService.client.get {
                 url {
                     path("v1/browse/categories")
-                    parameters {
-                        this["locale"] = locale
-                        this["limit"] = limit.toString()
-                        this["offset"] = offset.toString()
-                    }
+
+                    parameters.appendAll(
+                        StringValues.build {
+                            this["locale"] = locale
+                            this["limit"] = limit.toString()
+                            this["offset"] = offset.toString()
+                        }
+                    )
                 }
             }
         }

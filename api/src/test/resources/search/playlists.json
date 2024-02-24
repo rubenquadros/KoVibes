@@ -1,0 +1,736 @@
+{
+  "playlists": {
+    "href": "https://api.spotify.com/v1/search?query=rap&type=playlist&offset=0&limit=20",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "Rap music picked just for you",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIgbjUtLiWmHt"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIgbjUtLiWmHt",
+        "id": "37i9dQZF1EIgbjUtLiWmHt",
+        "images": [
+          {
+            "height": null,
+            "url": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Rap/en/large",
+            "width": null
+          }
+        ],
+        "name": "Rap Mix",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTk3NzcsMDAwMDAwMDAxNWYzN2Q5YjgyZjkwZDdlZWUwYzk1OGQ1ZjdiZGRmOA==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIgbjUtLiWmHt/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1EIgbjUtLiWmHt"
+      },
+      {
+        "collaborative": false,
+        "description": "New music from 21 Savage, Ye and Yeat. ",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX0XUsuxWHRQd",
+        "id": "37i9dQZF1DX0XUsuxWHRQd",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003cc6f1f0ad03c17fa6c67d48d",
+            "width": null
+          }
+        ],
+        "name": "RapCaviar",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTcwODczODcwNiwwMDAwMDAwMDA3MWFiMGJkMTNhYzU0ZjQ3NjJmMjgxZDUyYzZlMDli",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX0XUsuxWHRQd/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX0XUsuxWHRQd"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/0O9KAm0AwR8apEv6jNjyGc"
+        },
+        "href": "https://api.spotify.com/v1/playlists/0O9KAm0AwR8apEv6jNjyGc",
+        "id": "0O9KAm0AwR8apEv6jNjyGc",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2731e28b92ccb915b5307a7eb02ab67616d0000b273c4fee55d7b51479627c31f89ab67616d0000b273cace8a4b2ff924c9e12e3a96",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2731e28b92ccb915b5307a7eb02ab67616d0000b273c4fee55d7b51479627c31f89ab67616d0000b273cace8a4b2ff924c9e12e3a96",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2731e28b92ccb915b5307a7eb02ab67616d0000b273c4fee55d7b51479627c31f89ab67616d0000b273cace8a4b2ff924c9e12e3a96",
+            "width": 60
+          }
+        ],
+        "name": "RAP 🎶📀",
+        "owner": {
+          "display_name": "Danielle Carolan",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/22wyiv2aeb25pw5edkzdi73ty"
+          },
+          "href": "https://api.spotify.com/v1/users/22wyiv2aeb25pw5edkzdi73ty",
+          "id": "22wyiv2aeb25pw5edkzdi73ty",
+          "type": "user",
+          "uri": "spotify:user:22wyiv2aeb25pw5edkzdi73ty"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MjIsN2VjOGE2YTMyZDBiZjE0OWUyOGNlN2RhNGRiYmI4MGQ3NjE2N2NmYg==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/0O9KAm0AwR8apEv6jNjyGc/tracks",
+          "total": 21
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:0O9KAm0AwR8apEv6jNjyGc"
+      },
+      {
+        "collaborative": false,
+        "description": "The biggest rap hits of the last decade (2010-2022). Includes artists like: Chief Keef, Travis Scott, Bobby Shmurda or Migos. &#x2F;&#x2F;&#x2F; Hits Rap - Hip Hop Hits - Rap 2015 - Rap 2016 - Rap 2017 - Rap 2022 - Hip Hop Songs - Greatest Hip-Hop Songs - Trap Hits - Viral Hits",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/4riovLwMCrY3q0Cd4e0Sqp"
+        },
+        "href": "https://api.spotify.com/v1/playlists/4riovLwMCrY3q0Cd4e0Sqp",
+        "id": "4riovLwMCrY3q0Cd4e0Sqp",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb004375c6b51601bf4a002747",
+            "width": null
+          }
+        ],
+        "name": "Rap Hits (2010 - 2023)",
+        "owner": {
+          "display_name": "Membrives",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/dvagnb8spc28pcdoamkq1479m"
+          },
+          "href": "https://api.spotify.com/v1/users/dvagnb8spc28pcdoamkq1479m",
+          "id": "dvagnb8spc28pcdoamkq1479m",
+          "type": "user",
+          "uri": "spotify:user:dvagnb8spc28pcdoamkq1479m"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MjU3MSwzMzMwOTRhN2ZkNTM2YmIxNmQzMzNkZjI1M2MyNDZkYjYwZGUyYjc5",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/4riovLwMCrY3q0Cd4e0Sqp/tracks",
+          "total": 289
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:4riovLwMCrY3q0Cd4e0Sqp"
+      },
+      {
+        "collaborative": false,
+        "description": "Big rap for big reps. You got this.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX76t638V6CA8"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX76t638V6CA8",
+        "id": "37i9dQZF1DX76t638V6CA8",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000030b5dffb6f645059b157fc77b",
+            "width": null
+          }
+        ],
+        "name": "Rap Workout",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTcwMDc4OTg3MCwwMDAwMDAwMGM0ZTUwYWFkOGJhZTQ5MGQ3OTYwMDgxZjQ0YTkyNjRl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX76t638V6CA8/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX76t638V6CA8"
+      },
+      {
+        "collaborative": false,
+        "description": "Rap Bangers 2024",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/6UVgv2JGVGKWfGT0FDXa49"
+        },
+        "href": "https://api.spotify.com/v1/playlists/6UVgv2JGVGKWfGT0FDXa49",
+        "id": "6UVgv2JGVGKWfGT0FDXa49",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b273017d5e26552345c4b1575b6cab67616d0000b2737d384516b23347e92a587ed1ab67616d0000b273881d8d8378cd01099babcd44ab67616d0000b273c4e6adea69105e6b6e214b96",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b273017d5e26552345c4b1575b6cab67616d0000b2737d384516b23347e92a587ed1ab67616d0000b273881d8d8378cd01099babcd44ab67616d0000b273c4e6adea69105e6b6e214b96",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b273017d5e26552345c4b1575b6cab67616d0000b2737d384516b23347e92a587ed1ab67616d0000b273881d8d8378cd01099babcd44ab67616d0000b273c4e6adea69105e6b6e214b96",
+            "width": 60
+          }
+        ],
+        "name": "Rap Bangers 2024",
+        "owner": {
+          "display_name": "SavageSpeaks",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/hjdhmopugspp3qtet8phbpye6"
+          },
+          "href": "https://api.spotify.com/v1/users/hjdhmopugspp3qtet8phbpye6",
+          "id": "hjdhmopugspp3qtet8phbpye6",
+          "type": "user",
+          "uri": "spotify:user:hjdhmopugspp3qtet8phbpye6"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "OTg2LDM0ZTZlZDFkOGJmNjZiODRhYTY0Y2RiMTZhZTk2MjI0MDE0NDU4Y2I=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/6UVgv2JGVGKWfGT0FDXa49/tracks",
+          "total": 282
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:6UVgv2JGVGKWfGT0FDXa49"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/0DoorcbBIsa7J6NW9FlLio"
+        },
+        "href": "https://api.spotify.com/v1/playlists/0DoorcbBIsa7J6NW9FlLio",
+        "id": "0DoorcbBIsa7J6NW9FlLio",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb90372629d78fcc60403e8753",
+            "width": null
+          }
+        ],
+        "name": "rap songs that hit harder than North Koreas nuke ",
+        "owner": {
+          "display_name": "nathankayanirad",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/nathankayanirad"
+          },
+          "href": "https://api.spotify.com/v1/users/nathankayanirad",
+          "id": "nathankayanirad",
+          "type": "user",
+          "uri": "spotify:user:nathankayanirad"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTgyMCw2NjQwMGU2ZGVmZGM4NjYwNWFkNjk2ZWYzMTMyZTlmYmIwOWE1MWQx",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/0DoorcbBIsa7J6NW9FlLio/tracks",
+          "total": 378
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:0DoorcbBIsa7J6NW9FlLio"
+      },
+      {
+        "collaborative": false,
+        "description": "Best of rap classics and old school rap",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/0h9Gaqt2sNJ8M5aMV3h9BO"
+        },
+        "href": "https://api.spotify.com/v1/playlists/0h9Gaqt2sNJ8M5aMV3h9BO",
+        "id": "0h9Gaqt2sNJ8M5aMV3h9BO",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b2730b69fe379d73fd385175ef33ab67616d0000b2733b5e11ca1b063583df9492dbab67616d0000b273d843fabb75fef14010e30caeab67616d0000b273e1006755aa74151e4e04775d",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b2730b69fe379d73fd385175ef33ab67616d0000b2733b5e11ca1b063583df9492dbab67616d0000b273d843fabb75fef14010e30caeab67616d0000b273e1006755aa74151e4e04775d",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b2730b69fe379d73fd385175ef33ab67616d0000b2733b5e11ca1b063583df9492dbab67616d0000b273d843fabb75fef14010e30caeab67616d0000b273e1006755aa74151e4e04775d",
+            "width": 60
+          }
+        ],
+        "name": "Rap Classics 1990 - 2010",
+        "owner": {
+          "display_name": "alphamale21",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/j5t5jqg3imunyy978cl67frd9"
+          },
+          "href": "https://api.spotify.com/v1/users/j5t5jqg3imunyy978cl67frd9",
+          "id": "j5t5jqg3imunyy978cl67frd9",
+          "type": "user",
+          "uri": "spotify:user:j5t5jqg3imunyy978cl67frd9"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY2NSw5YTM2ODU1Mjg3MDc0Y2NmNWVlNjRiOGNjNzE3ODM0NzFlYzU0OGE5",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/0h9Gaqt2sNJ8M5aMV3h9BO/tracks",
+          "total": 82
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:0h9Gaqt2sNJ8M5aMV3h9BO"
+      },
+      {
+        "collaborative": false,
+        "description": "Hype Rap music picked just for you",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIhpG2qPPV1Lr"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIhpG2qPPV1Lr",
+        "id": "37i9dQZF1EIhpG2qPPV1Lr",
+        "images": [
+          {
+            "height": null,
+            "url": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Hype%20Rap/en/large",
+            "width": null
+          }
+        ],
+        "name": "Hype Rap Mix",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTk3NzcsMDAwMDAwMDA1YzZmMTk2Y2M4NGRkMTYwM2VhZjE1NTQ2NjJhMWE5ZQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIhpG2qPPV1Lr/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1EIhpG2qPPV1Lr"
+      },
+      {
+        "collaborative": false,
+        "description": "Rap Mexicano Diciembre 2023 🇲🇽 Hip Hop en español 🇲🇽 Rap Español hits 2024 🇲🇽 Rap Hits en español 🇲🇽 Rap Latino 2024 🇲🇽 Viva México Rap para fiesta🇲🇽 Santa Fe Klan 🇲🇽 gera mx 🇲🇽 Aleman Cartel de Santa 🇲🇽 Grandes Ligas 🇲🇽 Debo entender 🇲🇽 Santa fe Clan 🇲🇽 Latin Hip Hop 🇲🇽",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/0DyVdslhY2FTzupOetr77S"
+        },
+        "href": "https://api.spotify.com/v1/playlists/0DyVdslhY2FTzupOetr77S",
+        "id": "0DyVdslhY2FTzupOetr77S",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebbdb17edefe34c298b77136f10",
+            "width": null
+          }
+        ],
+        "name": "Rap Mexicano 2024 🇲🇽🇲🇽 Rap en español 2024 Éxitos 🇲🇽 Hip Hop Mexicano 🇲🇽 Rap mexicano 2024",
+        "owner": {
+          "display_name": "Raper Records",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/31cewv5vokfn7vcg42njmcsnncaa"
+          },
+          "href": "https://api.spotify.com/v1/users/31cewv5vokfn7vcg42njmcsnncaa",
+          "id": "31cewv5vokfn7vcg42njmcsnncaa",
+          "type": "user",
+          "uri": "spotify:user:31cewv5vokfn7vcg42njmcsnncaa"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NjAzLGE2N2NmMmFkOTA4YjAzZGM0MTlkNWFlNzgzY2IwYzJiNjFlZjI1ZWY=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/0DyVdslhY2FTzupOetr77S/tracks",
+          "total": 63
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:0DyVdslhY2FTzupOetr77S"
+      },
+      {
+        "collaborative": false,
+        "description": "Rap songs that’ll have everyone in your car screaming their lungs out",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/1TYU55CXL4BeJBa96wZa22"
+        },
+        "href": "https://api.spotify.com/v1/playlists/1TYU55CXL4BeJBa96wZa22",
+        "id": "1TYU55CXL4BeJBa96wZa22",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb08ec96f4bbc658ab69aab47f",
+            "width": null
+          }
+        ],
+        "name": "Songs to blast in the car",
+        "owner": {
+          "display_name": "Giancarlo",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/z4w7em4iirjezlsoaf9fyc4ww"
+          },
+          "href": "https://api.spotify.com/v1/users/z4w7em4iirjezlsoaf9fyc4ww",
+          "id": "z4w7em4iirjezlsoaf9fyc4ww",
+          "type": "user",
+          "uri": "spotify:user:z4w7em4iirjezlsoaf9fyc4ww"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NjQsYTA5ZTlmMzliNjQ1M2RkMzU5N2RhNGY4MGM0YjYzMDkwZmVjMWE4MA==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/1TYU55CXL4BeJBa96wZa22/tracks",
+          "total": 51
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:1TYU55CXL4BeJBa96wZa22"
+      },
+      {
+        "collaborative": false,
+        "description": "Hype Workout Rap music picked just for you",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1EIdOak9w8MNlv"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIdOak9w8MNlv",
+        "id": "37i9dQZF1EIdOak9w8MNlv",
+        "images": [
+          {
+            "height": null,
+            "url": "https://seed-mix-image.spotifycdn.com/v6/img/desc/Hype%20Workout%20Rap/en/large",
+            "width": null
+          }
+        ],
+        "name": "Hype Workout Rap Mix",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTk3NzcsMDAwMDAwMDA0OTMxNDI4OWVkNGJhNjkwNmJiYzgxNzMzNDQ3MWY5OQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1EIdOak9w8MNlv/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1EIdOak9w8MNlv"
+      },
+      {
+        "collaborative": false,
+        "description": "Hold up, run that back. Cover: Future",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXaAXb45NEVkE"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXaAXb45NEVkE",
+        "id": "37i9dQZF1DXaAXb45NEVkE",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003559a65645a4be6fd15321bf5",
+            "width": null
+          }
+        ],
+        "name": "Rap Rewind",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTcwNzQ1NDgwMCwwMDAwMDAwMGJjM2Y2ZTVkNzE4ZGRiYmZmZTBhM2JkYjA2Y2IzNjk5",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXaAXb45NEVkE/tracks",
+          "total": 75
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXaAXb45NEVkE"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/01MRi9jFGeSEEttKOk7VgR"
+        },
+        "href": "https://api.spotify.com/v1/playlists/01MRi9jFGeSEEttKOk7VgR",
+        "id": "01MRi9jFGeSEEttKOk7VgR",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2738dc0d801766a5aa6a33cbe37ab67616d0000b273a71dac1ff25a97b23b416032ab67616d0000b273bba7cfaf7c59ff0898acba1f",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2738dc0d801766a5aa6a33cbe37ab67616d0000b273a71dac1ff25a97b23b416032ab67616d0000b273bba7cfaf7c59ff0898acba1f",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b27302854a7060fccc1a66a4b5adab67616d0000b2738dc0d801766a5aa6a33cbe37ab67616d0000b273a71dac1ff25a97b23b416032ab67616d0000b273bba7cfaf7c59ff0898acba1f",
+            "width": 60
+          }
+        ],
+        "name": "All Time Rap Bangers 2010 - 2024",
+        "owner": {
+          "display_name": "Nick Bueso",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/9awd53s3nymgaya2yc2uivk4m"
+          },
+          "href": "https://api.spotify.com/v1/users/9awd53s3nymgaya2yc2uivk4m",
+          "id": "9awd53s3nymgaya2yc2uivk4m",
+          "type": "user",
+          "uri": "spotify:user:9awd53s3nymgaya2yc2uivk4m"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MjkyLDFlOGQxZWY0YzI2MWNmMTkxNmEyYWFhODVmMTc1N2I0NzEwZDg0Yjc=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/01MRi9jFGeSEEttKOk7VgR/tracks",
+          "total": 266
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:01MRi9jFGeSEEttKOk7VgR"
+      },
+      {
+        "collaborative": false,
+        "description": "HOTTEST HIP HOP BANGERS 🔥 SUBMIT AT IG _Panamalove INDIE RAP - NEW RAP 2024 - NEW RAP SONGS 2024 - NEW RAP PLAYLIST 2024 - NEW RAP HITS 2024 - NEW RAP MUSIC 2024 - NEW RAP BANGERS 2024 - RAP 2024 RAP HITS 2024 - RAP MUSIC 2024 -Rap 2024 Rap 2024 Rap 2024 Rap 2024 Rap 2024 Rap 2024 Rap 2024 Rap 2024",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/6Evb2FvsvxncumgZ9EABQT"
+        },
+        "href": "https://api.spotify.com/v1/playlists/6Evb2FvsvxncumgZ9EABQT",
+        "id": "6Evb2FvsvxncumgZ9EABQT",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb97bfe3391c6f0229fbffa97b",
+            "width": null
+          }
+        ],
+        "name": "Rap 2024🔥 New Rap Hits 🔥 New Hip Hop 2024 / New Rap 2024 / Hip Hop 2024 Hits ",
+        "owner": {
+          "display_name": "RAP GOD",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/7wbrcexsh97eqgo8wyk3be4zi"
+          },
+          "href": "https://api.spotify.com/v1/users/7wbrcexsh97eqgo8wyk3be4zi",
+          "id": "7wbrcexsh97eqgo8wyk3be4zi",
+          "type": "user",
+          "uri": "spotify:user:7wbrcexsh97eqgo8wyk3be4zi"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NTkxNyw3OGQzYzA2MGFmOTY3ZTBmMDIzMTMyMjBiZjVlY2RiN2M3YTI1OTYz",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/6Evb2FvsvxncumgZ9EABQT/tracks",
+          "total": 362
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:6Evb2FvsvxncumgZ9EABQT"
+      },
+      {
+        "collaborative": false,
+        "description": "“THE BIGGEST”",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/06cOlEWY6Dgw8cMj0VSOEI"
+        },
+        "href": "https://api.spotify.com/v1/playlists/06cOlEWY6Dgw8cMj0VSOEI",
+        "id": "06cOlEWY6Dgw8cMj0VSOEI",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000bebb297c3739df09c8108b889595",
+            "width": null
+          }
+        ],
+        "name": "",
+        "owner": {
+          "display_name": "Døømsdaýý",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/vo1of8o0gnricbf1j4gmu7rps"
+          },
+          "href": "https://api.spotify.com/v1/users/vo1of8o0gnricbf1j4gmu7rps",
+          "id": "vo1of8o0gnricbf1j4gmu7rps",
+          "type": "user",
+          "uri": "spotify:user:vo1of8o0gnricbf1j4gmu7rps"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MzQ0OCwzM2Y4Zjk2ZjdiODBiMTA3ODg5ZTA2NTI3NjMwN2ExMWM3NjdlM2Vl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/06cOlEWY6Dgw8cMj0VSOEI/tracks",
+          "total": 1283
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:06cOlEWY6Dgw8cMj0VSOEI"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/16bVUaI1I05jJVHn2KT3q8"
+        },
+        "href": "https://api.spotify.com/v1/playlists/16bVUaI1I05jJVHn2KT3q8",
+        "id": "16bVUaI1I05jJVHn2KT3q8",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000bebb21cd96b744be1c7a7b842d76",
+            "width": null
+          }
+        ],
+        "name": "rap",
+        "owner": {
+          "display_name": "Hagen",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/highball-music"
+          },
+          "href": "https://api.spotify.com/v1/users/highball-music",
+          "id": "highball-music",
+          "type": "user",
+          "uri": "spotify:user:highball-music"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUxNSw1NTM5ODZmZDk4ZTY2MDVhZDkzNDQ0MTVmZTAzYWEyMjMyNDQ4ZDVl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/16bVUaI1I05jJVHn2KT3q8/tracks",
+          "total": 462
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:16bVUaI1I05jJVHn2KT3q8"
+      },
+      {
+        "collaborative": false,
+        "description": "When Rock meets Rap: covers, collabs, mashups and everything that rhymes.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX89XXHpIgTCJ"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX89XXHpIgTCJ",
+        "id": "37i9dQZF1DX89XXHpIgTCJ",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000031e002423cce54749ca75ec56",
+            "width": null
+          }
+        ],
+        "name": "Rap 'n' Roll",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY5NjE5NDY5OSwwMDAwMDAwMGNjMTkzZWRkNWQ3M2ZlODcxMDljMDM0MDRjNmE3NWU3",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX89XXHpIgTCJ/tracks",
+          "total": 60
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX89XXHpIgTCJ"
+      },
+      {
+        "collaborative": false,
+        "description": "The biggest rap hits of the decade (2010-2024). Includes artists like: Kendrick Lamar, Travis Scott or Migos. /// Hits Rap - Hip Hop Hits - Rap 2015 - Rap 2016 - Rap 2017 - Rap 2022 - Rap 2023 - Rap 2024 - Hip Hop Songs - Greatest Hip-Hop Songs - Trap Hits - Viral Hits",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/041EEjr8FMkWlzbuKnSXYD"
+        },
+        "href": "https://api.spotify.com/v1/playlists/041EEjr8FMkWlzbuKnSXYD",
+        "id": "041EEjr8FMkWlzbuKnSXYD",
+        "images": [
+          {
+            "height": null,
+            "url": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000bebb3755cfb5a5f3fe7e5b27d508",
+            "width": null
+          }
+        ],
+        "name": "Rap Hits 2010-2024",
+        "owner": {
+          "display_name": "ES-A",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/my4bu71zjwuu57jcyay5x39cw"
+          },
+          "href": "https://api.spotify.com/v1/users/my4bu71zjwuu57jcyay5x39cw",
+          "id": "my4bu71zjwuu57jcyay5x39cw",
+          "type": "user",
+          "uri": "spotify:user:my4bu71zjwuu57jcyay5x39cw"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTE4NixkMzlhYjY3OWVhNTcxNzVjNDMwYjU3MWIwNGI2ZDE1Nzg5OGJlMjc2",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/041EEjr8FMkWlzbuKnSXYD/tracks",
+          "total": 281
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:041EEjr8FMkWlzbuKnSXYD"
+      }
+    ],
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/search?query=rap&type=playlist&offset=20&limit=20",
+    "offset": 0,
+    "previous": null,
+    "total": 29
+  }
+}
