@@ -32,7 +32,7 @@ internal class SearchApiImpl(
             )
         }
 
-        return response.getParsedHttpResponse<SearchTrackResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 
     override suspend fun searchAlbum(
@@ -47,7 +47,7 @@ internal class SearchApiImpl(
             )
         }
 
-        return response.getParsedHttpResponse<SearchAlbumResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 
     override suspend fun searchArtist(
@@ -62,7 +62,7 @@ internal class SearchApiImpl(
             )
         }
 
-        return response.getParsedHttpResponse<SearchArtistResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 
     override suspend fun searchPlaylist(

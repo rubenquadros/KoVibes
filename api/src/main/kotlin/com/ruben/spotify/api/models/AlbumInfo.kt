@@ -13,7 +13,7 @@ internal data class AlbumInfo(
     @SerialName("artists")
     val artists: List<ArtistInfo>,
     @SerialName("available_markets")
-    val availableMarkets: List<String>,
+    val availableMarkets: List<String>? = null,
     @SerialName("external_urls")
     val externalUrls: ExternalUrls,
     @SerialName("href")

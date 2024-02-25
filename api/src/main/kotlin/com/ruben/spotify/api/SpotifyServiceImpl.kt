@@ -7,6 +7,9 @@ import com.ruben.spotify.api.playlist.models.FeaturedPlaylistsResponse
 import com.ruben.spotify.api.playlist.models.PlaylistTracksResponse
 import com.ruben.spotify.api.playlist.toFeaturedPlayLists
 import com.ruben.spotify.api.playlist.toPlaylistTracks
+import com.ruben.spotify.api.recommendations.RecommendationsApi
+import com.ruben.spotify.api.recommendations.toRecommendations
+import com.ruben.spotify.api.request.GetRecommendationsRequest
 import com.ruben.spotify.api.response.Albums
 import com.ruben.spotify.api.response.Artists
 import com.ruben.spotify.api.response.Categories
@@ -14,6 +17,7 @@ import com.ruben.spotify.api.response.ErrorBody
 import com.ruben.spotify.api.response.Genres
 import com.ruben.spotify.api.response.PlaylistTracks
 import com.ruben.spotify.api.response.Playlists
+import com.ruben.spotify.api.response.Recommendations
 import com.ruben.spotify.api.response.SpotifyApiResponse
 import com.ruben.spotify.api.response.Tracks
 import com.ruben.spotify.api.search.SearchApi
@@ -25,7 +29,8 @@ import com.ruben.spotify.api.search.toSearchTrack
 internal class SpotifyServiceImpl(
     private val playlistApi: PlaylistApi,
     private val browseApi: BrowseApi,
-    private val searchApi: SearchApi
+    private val searchApi: SearchApi,
+    private val recommendationsApi: RecommendationsApi
 ) : SpotifyService {
     override suspend fun getFeaturedPlaylists(
         locale: String,
@@ -109,5 +114,11 @@ internal class SpotifyServiceImpl(
         val response = searchApi.searchPlaylist(query, market, limit, offset)
 
         return response.getParsedApiResponse { it.toSearchPlaylist() }
+    }
+
+    override suspend fun getRecommendations(getRecommendationsRequest: GetRecommendationsRequest): SpotifyApiResponse<Recommendations, ErrorBody> {
+        val response = recommendationsApi.getRecommendations(getRecommendationsRequest)
+
+        return response.getParsedApiResponse { it.toRecommendations() }
     }
 }

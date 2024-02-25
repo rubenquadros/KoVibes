@@ -1,6 +1,7 @@
 package com.ruben.spotify.api.models
 
 import com.ruben.spotify.api.ExcludeFromCoverage
+import com.ruben.spotify.api.playlist.models.AdditionalTrackInfo
 import com.ruben.spotify.api.playlist.models.RestrictionInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -13,7 +14,7 @@ internal data class TrackInfo(
     @SerialName("artists")
     val artistsInfo: List<ArtistInfo>,
     @SerialName("available_markets")
-    val availableMarkets: List<String>,
+    val availableMarkets: List<String>? = null,
     @SerialName("disc_number")
     val discNumber: Int,
     @SerialName("duration_ms")
@@ -49,5 +50,7 @@ internal data class TrackInfo(
     @SerialName("type")
     val type: String,
     @SerialName("uri")
-    val uri: String
+    val uri: String,
+    @SerialName("linked_from")
+    val linkedFrom: AdditionalTrackInfo? = null
 )

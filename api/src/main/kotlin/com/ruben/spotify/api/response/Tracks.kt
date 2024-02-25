@@ -9,7 +9,7 @@ data class Track(
     val addedAt: String?,
     val album: Album,
     val artists: List<Artist>,
-    val availableMarkets: List<String>,
+    val availableMarkets: List<String>?,
     val restrictions: Restrictions?,
     val discNumber: Int,
     val duration: Long,

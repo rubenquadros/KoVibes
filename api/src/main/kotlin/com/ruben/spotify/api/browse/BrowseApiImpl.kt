@@ -26,7 +26,7 @@ internal class BrowseApiImpl(
             }
         }
 
-        return response.getParsedHttpResponse<Genres, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 
     override suspend fun getCategories(
@@ -50,6 +50,6 @@ internal class BrowseApiImpl(
             }
         }
 
-        return response.getParsedHttpResponse<CategoriesResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 }

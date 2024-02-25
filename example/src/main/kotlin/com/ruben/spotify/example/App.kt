@@ -1,6 +1,7 @@
 package com.ruben.spotify.example
 
 import com.ruben.spotify.api.SpotifyApi
+import com.ruben.spotify.api.request.GetRecommendationsRequest
 import kotlinx.coroutines.runBlocking
 
 fun main() {
@@ -25,5 +26,10 @@ fun main() {
 
         val searchTrackResponse = spotifyService.searchTrack("rap")
         println("SearchTrackResponse :: $searchTrackResponse")
+
+        val recommendationsResponse = spotifyService.getRecommendations(
+            GetRecommendationsRequest(seedTracks = listOf("37i9dQZF1DXdGUQjVlqY2Q"))
+        )
+        println("RecommendationsResponse :: $recommendationsResponse")
     }
 }

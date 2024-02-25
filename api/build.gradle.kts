@@ -44,7 +44,8 @@ koverReport {
     filters {
         excludes {
             classes(
-                "com.ruben.spotify.api.response.*"
+                "com.ruben.spotify.api.response.*",
+                "com.ruben.spotify.api.request.*"
             )
             annotatedBy("com.ruben.spotify.api.ExcludeFromCoverage")
         }

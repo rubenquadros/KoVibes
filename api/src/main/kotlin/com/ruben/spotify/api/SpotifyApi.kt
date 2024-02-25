@@ -2,6 +2,7 @@ package com.ruben.spotify.api
 
 import com.ruben.spotify.api.browse.BrowseApiImpl
 import com.ruben.spotify.api.playlist.PlaylistApiImpl
+import com.ruben.spotify.api.recommendations.RecommendationsApiImpl
 import com.ruben.spotify.api.search.SearchApiImpl
 
 object SpotifyApi {
@@ -14,7 +15,8 @@ object SpotifyApi {
         SpotifyServiceImpl(
             playlistApi = PlaylistApiImpl(ktorService),
             browseApi = BrowseApiImpl(ktorService),
-            searchApi = SearchApiImpl(ktorService)
+            searchApi = SearchApiImpl(ktorService),
+            recommendationsApi = RecommendationsApiImpl(ktorService)
         )
     }
 

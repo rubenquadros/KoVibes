@@ -33,7 +33,7 @@ internal data class TrackItem(
     @SerialName("is_local")
     val isLocal: Boolean,
     @SerialName("added_by")
-    val addedBy: TrackAddedBy?,
+    val addedBy: AdditionalTrackInfo?,
     @SerialName("primary_color")
     val primaryColor: String?,
     @SerialName("track")
@@ -44,7 +44,7 @@ internal data class TrackItem(
 
 @ExcludeFromCoverage
 @Serializable
-internal data class TrackAddedBy(
+internal data class AdditionalTrackInfo(
     @SerialName("external_urls")
     val externalUrls: ExternalUrls,
     @SerialName("href")

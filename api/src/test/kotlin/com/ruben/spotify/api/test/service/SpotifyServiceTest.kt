@@ -1,6 +1,7 @@
 package com.ruben.spotify.api.test.service
 
 import com.ruben.spotify.api.SpotifyServiceImpl
+import com.ruben.spotify.api.request.GetRecommendationsRequest
 import com.ruben.spotify.api.test.assertSpotifyApiError
 import com.ruben.spotify.api.test.assertSpotifyApiSuccess
 import com.ruben.spotify.api.test.getSuccessSpotifyApiResponse
@@ -12,7 +13,8 @@ class SpotifyServiceTest {
     private val spotifyService = SpotifyServiceImpl(
         FakePlaylistApi(),
         FakeBrowseApi(),
-        FakeSearchApi()
+        FakeSearchApi(),
+        FakeRecommendationsApi()
     )
 
     @Test
@@ -178,6 +180,26 @@ class SpotifyServiceTest {
         FakeSearchApi.isSuccess = false
 
         val response = spotifyService.searchPlaylist("rap")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get recommendations responds success then response is received`() = runTest {
+        FakeRecommendationsApi.isSuccess = true
+
+        val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedArtists = listOf("1234")))
+
+        response.assertSpotifyApiSuccess(
+            { response.getSuccessSpotifyApiResponse().tracks.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get recommendations responds error then error is received`() = runTest {
+        FakeRecommendationsApi.isSuccess = false
+
+        val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedTracks = listOf("1234")))
 
         response.assertSpotifyApiError()
     }

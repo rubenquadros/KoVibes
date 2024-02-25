@@ -38,7 +38,7 @@ internal class PlaylistApiImpl(
             }
         }
 
-        return response.getParsedHttpResponse<FeaturedPlaylistsResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 
     override suspend fun getPlaylistTracks(
@@ -65,6 +65,6 @@ internal class PlaylistApiImpl(
             }
         }
 
-        return response.getParsedHttpResponse<PlaylistTracksResponse, ErrorBody>()
+        return response.getParsedHttpResponse()
     }
 }
