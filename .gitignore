@@ -27,3 +27,7 @@ replay_pid*
 /build
 
 /*/build
+
+*.DS_STORE
+
+local.properties
