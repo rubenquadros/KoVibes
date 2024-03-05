@@ -44,12 +44,14 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(libs.ktor.java)
+                implementation(libs.ktor.client.logging)
             }
         }
 
         val androidMain by getting {
             dependencies {
                 implementation(libs.ktor.android)
+                implementation(libs.ktor.client.logging)
             }
         }
 

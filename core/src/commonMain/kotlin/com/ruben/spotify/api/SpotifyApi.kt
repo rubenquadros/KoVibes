@@ -10,7 +10,11 @@ object SpotifyApi {
     private val authStorage: AuthStorage by lazy { AuthStorage() }
 
     private val ktorService: KtorService by lazy {
-        KtorService(authStorage = authStorage, ktorEngine = { getKtorEngine() })
+        KtorService(
+            authStorage = authStorage,
+            ktorEngine = { getKtorEngine() },
+            ktorLogger = { getKtorLogger() }
+        )
     }
 
     private val spotifyService: SpotifyService by lazy {

@@ -4,6 +4,8 @@ import com.ruben.spotify.api.AuthStorage
 import com.ruben.spotify.api.KtorService
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
+import io.ktor.client.plugins.logging.Logger
+import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.http.Headers
 import io.ktor.http.HttpStatusCode
 import io.ktor.utils.io.ByteReadChannel
@@ -12,7 +14,8 @@ object MockKtorService {
     internal fun createMockKtorService(mockConfig: Map<String, MockResponse>): KtorService {
         return KtorService(
             authStorage = AuthStorage(),
-            ktorEngine = { createMockEngine(mockConfig) }
+            ktorEngine = { createMockEngine(mockConfig) },
+            ktorLogger = { Logger.SIMPLE }
         )
     }
 

@@ -11,7 +11,6 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
-import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.post
@@ -27,6 +26,7 @@ import kotlinx.serialization.json.Json
 
 internal class KtorService(
     ktorEngine: () -> HttpClientEngine,
+    ktorLogger: () -> Logger,
     private val authStorage: AuthStorage
 ) {
     val client: HttpClient by lazy {
@@ -39,7 +39,7 @@ internal class KtorService(
             }
 
             install(Logging) {
-                logger = Logger.SIMPLE
+                logger = ktorLogger()
                 level = LogLevel.ALL
             }
 
