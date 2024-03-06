@@ -5,10 +5,19 @@ ktor = "2.3.8"
 coroutines = "1.8.0"
 kover = "0.7.6"
 android-minSdk = "24"
-android-compileSdk = "33"
+android-compileSdk = "34"
 org-jetbrains-kotlin-jvm = "1.9.22"
 okio = "3.6.0"
-
+kotlin1922 = "1.9.22"
+core-ktx = "1.12.0"
+compose-lifecycle = "2.7.0"
+compose-activity = "1.8.2"
+ksp = "1.9.21-1.0.15"
+koin = "3.5.3"
+koin-ksp = "1.3.1"
+immutable-collections = "0.3.7"
+coil = "2.6.0"
+uiTooling = "1.6.2"
 
 [libraries]
 # ktor
@@ -30,8 +39,28 @@ okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
 
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
+# used in android example
+immutable-collections = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "immutable-collections" }
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+# compose
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+compose-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "compose-lifecycle" }
+compose-bom = "androidx.compose:compose-bom:2024.02.01"
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+compose-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "uiTooling" }
+# koin
+koin-andorid = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-android-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-ksp" }
+koin-ksp = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-ksp" }
+
 [bundles]
 ktor = ["ktor-core", "ktor-auth", "ktor-content-negotiation", "ktor-serialization", "ktor-client-logging"]
+compose = ["compose-ui", "compose-ui-graphics", "compose-tooling-preview", "compose-material3"]
+koin = ["koin-andorid", "koin-android-annotations", "koin-compose"]
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -39,3 +68,6 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin1922" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
