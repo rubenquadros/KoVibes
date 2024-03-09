@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">android</string>
+    <string name="featured_playlists_title">Featured Playlists</string>
+    <string name="categories_title">Categories</string>
+    <string name="content_description_playlist">Playlist</string>
+    <string name="content_description_category">Category</string>
+</resources>

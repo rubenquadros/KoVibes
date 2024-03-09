@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="kotlin-spotify-api.api" target="17" />
+      <module name="kotlin-spotify-api.api.main" target="17" />
+      <module name="kotlin-spotify-api.api.test" target="17" />
+      <module name="kotlin-spotify-api.main" target="17" />
+      <module name="kotlin-spotify-api.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
