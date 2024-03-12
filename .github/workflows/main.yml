@@ -1,6 +1,6 @@
 # Kotlin Spotify API workflow
 
-name: Kotlin-Spotify-Api-CI
+name: KoSpotify-CI
 
 # Controls when the workflow is triggered
 on:
