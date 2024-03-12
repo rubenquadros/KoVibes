@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>KoSpotify</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="index.html">
+                            KoSpotify
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":core:dokkaHtml/commonMain">common</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageIds="KoSpotify::////PointingToDeclaration//-864720431">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Ko</span><wbr></wbr><span><span>Spotify</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":core:dokkaHtml/commonMain"><p class="paragraph">Provides documentation for the KoSpotify API.</p><p class="paragraph">If you are interested about the public APIs refer the following files:</p><ul><li><p class="paragraph"><code class="lang-kotlin">SpotifyApi</code></p></li><li><p class="paragraph"><code class="lang-kotlin">SpotifyService</code></p></li></ul></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="666988373%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api" id="666988373%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api/index.html">com.ruben.spotify.api</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="666988373%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="666988373%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api" id="666988373%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This package contains the public APIs.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="2052268359%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.browse" id="2052268359%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.browse/index.html">com.ruben.spotify.api.browse</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2052268359%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="2052268359%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.browse" id="2052268359%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package responsible to provide browsable content.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1854629621%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.browse.models" id="1854629621%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.browse.models/index.html">com.ruben.spotify.api.browse.models</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1854629621%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1854629621%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.browse.models" id="1854629621%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package which contains data classes for the API responses of Spotify browse APIs.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1285960409%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.models" id="-1285960409%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.models/index.html">com.ruben.spotify.api.models</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1285960409%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1285960409%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.models" id="-1285960409%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package which contains common data classes for the Spotify API responses.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="114804687%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.playlist" id="114804687%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.playlist/index.html">com.ruben.spotify.api.playlist</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="114804687%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="114804687%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.playlist" id="114804687%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package responsible to provide playlist data.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1203775635%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.playlist.models" id="-1203775635%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.playlist.models/index.html">com.ruben.spotify.api.playlist.models</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1203775635%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1203775635%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.playlist.models" id="-1203775635%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package which contains data classes for API responses of Spotify playlist APIs.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="510455873%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.recommendations" id="510455873%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.recommendations/index.html">com.ruben.spotify.api.recommendations</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="510455873%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="510455873%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.recommendations" id="510455873%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package responsible to provide track recommendation data.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1347660475%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.recommendations.models" id="1347660475%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.recommendations.models/index.html">com.ruben.spotify.api.recommendations.models</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1347660475%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1347660475%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.recommendations.models" id="1347660475%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package which contains data classes for API responses of Spotify recommendations APIs.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-991209546%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.request" id="-991209546%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.request/index.html">com.ruben.spotify.api.request</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-991209546%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-991209546%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.request" id="-991209546%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This package contains the request models.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1547443582%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.response" id="1547443582%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.response/index.html">com.ruben.spotify.api.response</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1547443582%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1547443582%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.response" id="1547443582%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This package contains the response models.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1016534757%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.search" id="1016534757%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.search/index.html">com.ruben.spotify.api.search</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1016534757%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1016534757%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.search" id="1016534757%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package responsible to search for queries in the Spotify API.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-942439529%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.search.models" id="-942439529%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+    <div class="table-row" data-filterable-current=":core:dokkaHtml/commonMain" data-filterable-set=":core:dokkaHtml/commonMain">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-ko-spotify/com.ruben.spotify.api.search.models/index.html">com.ruben.spotify.api.search.models</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-942439529%2FPackages%2F-864720431"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag common-like">common</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-942439529%2FPackages%2F-864720431" anchor-label="com.ruben.spotify.api.search.models" id="-942439529%2FPackages%2F-864720431" data-filterable-set=":core:dokkaHtml/commonMain"></a>
+            <p class="paragraph">This is an internal package which contains data classes for API responses of Spotify search APIs.</p>
+          </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>Copyright © 2024 KoSpotify</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
