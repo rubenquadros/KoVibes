@@ -16,6 +16,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * @suppress
+ * SearchApiImpl is the implementation of [SearchApi]
+ *
+ * @property ktorService
+ * @property dispatcher
+ */
 internal class SearchApiImpl(
     private val ktorService: KtorService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
@@ -81,6 +88,17 @@ internal class SearchApiImpl(
     }
 
 
+    /**
+     * @suppress
+     * Wrapper around search network call.
+     *
+     * @param query
+     * @param market
+     * @param limit
+     * @param offset
+     * @param type
+     * @return [HttpResponse].
+     */
     private suspend fun searchSpotify(
         query: String,
         market: String?,

@@ -24,6 +24,14 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
+/**
+ * Ktor service is responsible to provide the [client] to call the Spotify APIs.
+ *
+ * @property authStorage
+ *
+ * @param ktorEngine
+ * @param ktorLogger
+ */
 internal class KtorService(
     ktorEngine: () -> HttpClientEngine,
     ktorLogger: () -> Logger,

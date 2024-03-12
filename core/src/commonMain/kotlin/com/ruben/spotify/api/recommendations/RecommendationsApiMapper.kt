@@ -7,6 +7,10 @@ import com.ruben.spotify.api.recommendations.models.SeedInfo
 import com.ruben.spotify.api.response.Recommendations
 import com.ruben.spotify.api.response.Seed
 
+/**
+ * @suppress
+ * Map [RecommendationsResponse] to [Recommendations].
+ */
 internal fun RecommendationsResponse.toRecommendations(): Recommendations {
     return Recommendations(
         seeds = this.seeds.map { seedInfo: SeedInfo ->

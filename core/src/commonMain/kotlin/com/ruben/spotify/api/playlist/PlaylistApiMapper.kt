@@ -9,6 +9,11 @@ import com.ruben.spotify.api.playlist.models.TrackItem
 import com.ruben.spotify.api.response.PlaylistTracks
 import com.ruben.spotify.api.response.Playlists
 
+/**
+ * @suppress
+ *
+ * Map [FeaturedPlaylistsResponse] to [Playlists].
+ */
 internal fun FeaturedPlaylistsResponse.toFeaturedPlayLists(): Playlists {
     return Playlists(
         items = this.playlists.items.map { item: PlaylistInfo ->
@@ -18,6 +23,11 @@ internal fun FeaturedPlaylistsResponse.toFeaturedPlayLists(): Playlists {
     )
 }
 
+/**
+ * @suppress
+ *
+ * Map [PlaylistTracksResponse] to [PlaylistTracks].
+ */
 internal fun PlaylistTracksResponse.toPlaylistTracks(): PlaylistTracks {
     return PlaylistTracks(
         tracks = this.items.map { item: TrackItem ->

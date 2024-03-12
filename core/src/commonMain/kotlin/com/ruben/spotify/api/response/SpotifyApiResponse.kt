@@ -2,6 +2,13 @@ package com.ruben.spotify.api.response
 
 import kotlinx.serialization.Serializable
 
+/**
+ * All APIs return [SpotifyApiResponse].
+ * If the request is success then you will be receiving [SpotifyApiResponse.Success].
+ * If there is any error you will be receiving [SpotifyApiResponse.Error].
+ *
+ * @see [ErrorBody]
+ */
 sealed interface SpotifyApiResponse<out RESPONSE, out ERROR> {
     data class Success<RESPONSE>(val result: RESPONSE): SpotifyApiResponse<RESPONSE, Nothing>
 

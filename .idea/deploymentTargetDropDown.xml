@@ -5,6 +5,9 @@
       <entry key="Android">
         <State />
       </entry>
+      <entry key="example.android">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

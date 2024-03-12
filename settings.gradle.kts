@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin-spotify-api"
+rootProject.name = "KoSpotify"
 include("core")
 include("example")
 include(":example:jvm")

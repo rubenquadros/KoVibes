@@ -26,6 +26,15 @@ import com.ruben.spotify.api.search.toSearchArtist
 import com.ruben.spotify.api.search.toSearchPlaylist
 import com.ruben.spotify.api.search.toSearchTrack
 
+/**
+ * @suppress
+ * SpotifyServiceImpl is the implementation of [SpotifyService].
+ *
+ * @property playlistApi
+ * @property browseApi
+ * @property searchApi
+ * @property recommendationsApi
+ */
 internal class SpotifyServiceImpl(
     private val playlistApi: PlaylistApi,
     private val browseApi: BrowseApi,
