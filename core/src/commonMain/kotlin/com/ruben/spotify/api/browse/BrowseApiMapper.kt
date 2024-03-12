@@ -7,6 +7,10 @@ import com.ruben.spotify.api.models.ImageInfo
 import com.ruben.spotify.api.response.Categories
 import com.ruben.spotify.api.response.Category
 
+/**
+ * @suppress
+ * Map [CategoriesResponse] to [Categories].
+ */
 internal fun CategoriesResponse.toCategories(): Categories {
     return Categories(
         isNext = this.categories.next != null,

@@ -13,6 +13,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * @suppress
+ * BrowseApiImpl is the implementation of [BrowseApi].
+ *
+ * @property ktorService
+ * @property dispatcher
+ */
 internal class BrowseApiImpl(
     private val ktorService: KtorService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO

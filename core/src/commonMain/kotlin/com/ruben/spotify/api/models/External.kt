@@ -4,7 +4,6 @@ import com.ruben.spotify.api.ExcludeFromCoverage
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 @ExcludeFromCoverage
 @Serializable
 internal data class ExternalUrls(

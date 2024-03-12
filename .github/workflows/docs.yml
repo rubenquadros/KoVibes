@@ -1,0 +1,27 @@
+# Kotlin Spotify documentation workflow
+
+name: KoSpotify-docs-CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # Generate the documentation
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build documentation
+        run: ./gradlew core:dokkaHtml
+      - name: Publish documentation
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ../../core/build/dokka/html

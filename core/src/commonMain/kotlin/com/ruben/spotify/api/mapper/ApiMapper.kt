@@ -13,14 +13,27 @@ import com.ruben.spotify.api.response.Playlist
 import com.ruben.spotify.api.response.Restrictions
 import com.ruben.spotify.api.response.Track
 
+/**
+ * @suppress
+ *
+ * Map [ImageInfo] to [Image].
+ */
 internal fun ImageInfo.toImage(): Image {
     return Image(height = height, width = width, url = url.orEmpty())
 }
 
+/**
+ * @suppress
+ * Map [RestrictionInfo] to [Restrictions].
+ */
 internal fun RestrictionInfo.toRestrictions(): Restrictions {
     return Restrictions(reason)
 }
 
+/**
+ * @suppress
+ * Map [ArtistInfo] to [Artist].
+ */
 internal fun ArtistInfo.toArtist(): Artist {
     return Artist(
         followers = followers?.total,
@@ -32,6 +45,10 @@ internal fun ArtistInfo.toArtist(): Artist {
     )
 }
 
+/**
+ * @suppress
+ * Map [AlbumInfo] to [Album].
+ */
 internal fun AlbumInfo.toAlbum(): Album {
     return Album(
         albumType = type,
@@ -50,6 +67,10 @@ internal fun AlbumInfo.toAlbum(): Album {
     )
 }
 
+/**
+ * @suppress
+ * Map [TrackInfo] to [Track].
+ */
 internal fun TrackInfo.toTrack(addedAt: String? = null): Track {
     return Track(
         addedAt = addedAt,
@@ -67,6 +88,10 @@ internal fun TrackInfo.toTrack(addedAt: String? = null): Track {
     )
 }
 
+/**
+ * @suppress
+ * Map [PlaylistInfo] to [Playlist].
+ */
 internal fun PlaylistInfo.toPlayList(): Playlist {
     return Playlist(
         collaborative = collaborative,

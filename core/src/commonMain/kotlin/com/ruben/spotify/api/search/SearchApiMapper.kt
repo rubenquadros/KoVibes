@@ -17,6 +17,10 @@ import com.ruben.spotify.api.search.models.SearchArtistResponse
 import com.ruben.spotify.api.search.models.SearchPlaylistResponse
 import com.ruben.spotify.api.search.models.SearchTrackResponse
 
+/**
+ * @suppress
+ * Map [SearchPlaylistResponse] to [Playlists].
+ */
 internal fun SearchPlaylistResponse.toSearchPlaylist(): Playlists {
     return Playlists(
         isNext = this.playlists.next != null,
@@ -26,6 +30,10 @@ internal fun SearchPlaylistResponse.toSearchPlaylist(): Playlists {
     )
 }
 
+/**
+ * @suppress
+ * Map [SearchAlbumResponse] to [Albums].
+ */
 internal fun SearchAlbumResponse.toSearchAlbum(): Albums {
     return Albums(
         isNext = this.albums.next != null,
@@ -35,6 +43,10 @@ internal fun SearchAlbumResponse.toSearchAlbum(): Albums {
     )
 }
 
+/**
+ * @suppress
+ * Map [SearchArtistResponse] to [Artists].
+ */
 internal fun SearchArtistResponse.toSearchArtist(): Artists {
     return Artists(
         isNext = this.artists.next != null,
@@ -44,6 +56,10 @@ internal fun SearchArtistResponse.toSearchArtist(): Artists {
     )
 }
 
+/**
+ * @suppress
+ * Map [SearchTrackResponse] to [Tracks].
+ */
 internal fun SearchTrackResponse.toSearchTrack(): Tracks {
     return Tracks(
         isNext = this.tracks.next != null,

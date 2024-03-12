@@ -14,6 +14,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * @suppress
+ * RecommendationsApiImpl is the implementation of [RecommendationsApi].
+ *
+ * @property ktorService
+ * @property dispatcher
+ */
 internal class RecommendationsApiImpl(
     private val ktorService: KtorService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO

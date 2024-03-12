@@ -1,8 +1,11 @@
 package com.ruben.spotify.api
 
 import kotlin.io.encoding.Base64
-import kotlin.io.encoding.ExperimentalEncodingApi
 
+/**
+ * AuthStorage is responsible to store the [accessToken].
+ *
+ */
 internal class AuthStorage {
 
     private var clientId: String = ""
@@ -10,20 +13,41 @@ internal class AuthStorage {
 
     private var accessToken: String = ""
 
+    /**
+     * Init the storage.
+     *
+     * @param clientId
+     * @param clientSecret
+     */
     fun init(clientId: String, clientSecret: String) {
         this.clientId = clientId
         this.clientSecret = clientSecret
     }
 
+    /**
+     * Return the access token.
+     *
+     * @return [String].
+     */
     fun getAccessToken(): String {
         return accessToken
     }
 
+    /**
+     * Update access token with a new one after expiry.
+     *
+     * @param accessToken
+     */
     fun updateAccessToken(accessToken: String) {
         this.accessToken = accessToken
     }
 
-    @OptIn(ExperimentalEncodingApi::class)
+    /**
+     * Encode the [clientId] and [clientSecret] and return the encoded string.
+     *
+     * @return [String].
+     */
+    @OptIn(kotlin.io.encoding.ExperimentalEncodingApi::class)
     fun getEncodedCredentials(): String {
         return Base64.encode(
             source = "$clientId:$clientSecret".toByteArray()

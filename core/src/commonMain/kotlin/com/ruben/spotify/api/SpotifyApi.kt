@@ -5,6 +5,9 @@ import com.ruben.spotify.api.playlist.PlaylistApiImpl
 import com.ruben.spotify.api.recommendations.RecommendationsApiImpl
 import com.ruben.spotify.api.search.SearchApiImpl
 
+/**
+ * SpotifyApi is the entry class for your application.
+ */
 object SpotifyApi {
 
     private val authStorage: AuthStorage by lazy { AuthStorage() }
@@ -26,6 +29,15 @@ object SpotifyApi {
         )
     }
 
+    /**
+     * Returns a [SpotifyService] which can be used to call spotify APIs.
+     *
+     * See the [Doc to generate Client ID and Client Secret](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#:~:text=of%20your%20choice.-,Set%20Up%20Your%20Account,-Login%20to%20the).
+     *
+     * @param clientId
+     * @param clientSecret
+     * @return [SpotifyService]
+     */
     fun createSpotifyApi(clientId: String, clientSecret: String): SpotifyService {
         validateClientId(clientId)
         validateClientSecret(clientSecret)

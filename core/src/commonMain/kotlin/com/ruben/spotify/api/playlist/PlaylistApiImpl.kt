@@ -13,6 +13,13 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+/**
+ * @suppress
+ * PlaylistApiImpl is the implementation of [PlaylistApi].
+ *
+ * @property ktorService
+ * @property dispatcher
+ */
 internal class PlaylistApiImpl(
     private val ktorService: KtorService,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
