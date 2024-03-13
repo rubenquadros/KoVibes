@@ -13,8 +13,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KoSpotify"
-include("core")
+rootProject.name = "KoVibes"
+include("kovibes")
 include("example")
 include(":example:jvm")
 include(":example:android")

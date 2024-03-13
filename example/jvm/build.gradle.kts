@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(project(":kovibes"))
     implementation(libs.coroutines.core)
 }

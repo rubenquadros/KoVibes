@@ -1,6 +1,6 @@
-# Kotlin Spotify API workflow
+# KoVibes API workflow
 
-name: KoSpotify-CI
+name: KoVibes-CI
 
 # Controls when the workflow is triggered
 on:
@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build
-        run: ./gradlew core:build
+        run: ./gradlew kovibes:build
 
   #Check code coverage
   code-coverage:
@@ -40,15 +40,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Run kover
-        run: ./gradlew core:koverXmlReport
+        run: ./gradlew kovibes:koverXmlReport
       - name: Verify code coverage
-        run: ./gradlew core:koverVerify
+        run: ./gradlew kovibes:koverVerify
       - name: Print code coverage
-        run: ./gradlew core:koverLog
-      - name: Upload report
-        uses: codecov/codecov-action@v4.0.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: rubenquadros/Kotlin-Spotify-Api
-          files: core/build/reports/kover/report.xml
-        continue-on-error: false
+        run: ./gradlew kovibes:koverLog
+#      - name: Upload report
+#        uses: codecov/codecov-action@v4.0.1
+#        with:
+#          token: ${{ secrets.CODECOV_TOKEN }}
+#          slug: rubenquadros/Kotlin-Spotify-Api
+#          files: core/build/reports/kover/report.xml
+#        continue-on-error: false
