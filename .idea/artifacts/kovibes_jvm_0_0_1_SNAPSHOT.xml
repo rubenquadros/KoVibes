@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="kovibes-jvm-0.0.1-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/kovibes/build/libs</output-path>
+    <root id="archive" name="kovibes-jvm-0.0.1-SNAPSHOT.jar">
+      <element id="module-output" name="KoVibes.kovibes.jvmMain" />
+    </root>
+  </artifact>
+</component>

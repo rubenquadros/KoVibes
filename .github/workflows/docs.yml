@@ -1,6 +1,6 @@
-# Kotlin Spotify documentation workflow
+# KoVibes documentation workflow
 
-name: KoSpotify-docs-CI
+name: KoVibes-docs-CI
 
 on:
   workflow_dispatch:
@@ -20,8 +20,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Build documentation
-        run: ./gradlew core:dokkaHtml
+        run: ./gradlew kovibes:dokkaHtml
       - name: Publish documentation
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ./core/build/dokka/html
+          folder: ./kovibes/build/dokka/html

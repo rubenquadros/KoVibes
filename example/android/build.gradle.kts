@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ruben.spotify.example.android"
+    namespace = "io.github.rubenquadros.kovibes.example.android"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.ruben.spotify.example.android"
+        applicationId = "io.github.rubenquadros.kovibes.android"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.compileSdk.get().toInt()
         versionCode = 1
@@ -56,7 +56,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(project(":kovibes"))
     implementation(libs.coil)
     implementation(libs.immutable.collections)
     implementation(libs.compose.activity)

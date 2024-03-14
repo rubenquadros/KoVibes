@@ -9,10 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/example" />
             <option value="$PROJECT_DIR$/example/android" />
             <option value="$PROJECT_DIR$/example/jvm" />
+            <option value="$PROJECT_DIR$/kovibes" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

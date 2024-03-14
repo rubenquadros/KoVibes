@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="kospotify-jvm-0.0.1">
+    <output-path>$PROJECT_DIR$/kospotify/build/libs</output-path>
+    <root id="archive" name="kospotify-jvm-0.0.1.jar" />
+  </artifact>
+</component>
