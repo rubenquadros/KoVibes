@@ -24,7 +24,7 @@ buildscript {
 }
 
 group = "io.github.rubenquadros"
-version = "0.0.1"
+version = "0.0.1-SNAPSHOT"
 
 kotlin {
     applyDefaultHierarchyTemplate()
@@ -147,8 +147,8 @@ publishing {
 
     repositories {
         maven {
-            name = "Oss"
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            name = "Snapshot"
+            setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
             credentials {
                 username = System.getenv("SONATYPE_USERNAME")
                 password = System.getenv("SONATYPE_PASSWORD")
@@ -156,7 +156,7 @@ publishing {
         }
 
         maven {
-            name = "Snapshot"
+            name = "Sonatype"
             setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
             credentials {
                 username = System.getenv("SONATYPE_USERNAME")

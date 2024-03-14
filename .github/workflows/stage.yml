@@ -1,0 +1,23 @@
+# KoVibes publishing workflow
+
+name: KoVibes-publish-CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  # Publish the library to staging
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Setup gradle
+        uses: gradle/actions/setup-gradle@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Publish
+        run: ./gradlew kovibes:publishAllPublicationsToSonatypeRepository
