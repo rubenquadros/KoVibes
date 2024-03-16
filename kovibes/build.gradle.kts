@@ -147,17 +147,13 @@ publishing {
 
     repositories {
         maven {
-            name = "Snapshot"
-            setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-            credentials {
-                username = System.getenv("SONATYPE_USERNAME")
-                password = System.getenv("SONATYPE_PASSWORD")
+            val url = if (project.version.toString().endsWith("SNAPSHOT")) {
+                "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            } else {
+                "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             }
-        }
-
-        maven {
-            name = "Sonatype"
-            setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            name = "KoVibes"
+            setUrl(url)
             credentials {
                 username = System.getenv("SONATYPE_USERNAME")
                 password = System.getenv("SONATYPE_PASSWORD")
@@ -169,7 +165,7 @@ publishing {
         withType<MavenPublication> {
             artifact(javadocJar)
 
-            version = "0.0.1"
+            version = project.version.toString()
 
             pom {
                 name.set(rootProject.name)

@@ -1,4 +1,4 @@
-# KoVibes publishing workflow
+# KoVibes snapshot publishing workflow
 
 name: KoVibes-publish-CI
 
@@ -20,4 +20,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Publish
-        run: ./gradlew kovibes:publishAllPublicationsToSonatypeRepository
+        run: ./gradlew kovibes:publishAllPublicationsToKoVibesRepository --stacktrace
+        env:
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
