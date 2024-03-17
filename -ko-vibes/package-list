@@ -406,6 +406,8 @@ $dokka.location:io.github.rubenquadros.kovibes.api/AuthStorage/getEncodedCredent
 $dokka.location:io.github.rubenquadros.kovibes.api/AuthStorage/init/#kotlin.String#kotlin.String/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-auth-storage/init.html
 $dokka.location:io.github.rubenquadros.kovibes.api/AuthStorage/updateAccessToken/#kotlin.String/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-auth-storage/update-access-token.html
 $dokka.location:io.github.rubenquadros.kovibes.api/ExcludeFromCoverage///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-exclude-from-coverage/index.html
+$dokka.location:io.github.rubenquadros.kovibes.api/KoVibesApi///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ko-vibes-api/index.html
+$dokka.location:io.github.rubenquadros.kovibes.api/KoVibesApi/createSpotifyService/#kotlin.String#kotlin.String/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ko-vibes-api/create-spotify-service.html
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService.TokenResponse///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/-token-response/index.html
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService.TokenResponse/TokenResponse/#kotlin.String#kotlin.String#kotlin.Long/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/-token-response/-token-response.html
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService.TokenResponse/accessToken/#/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/-token-response/access-token.html
@@ -414,8 +416,6 @@ $dokka.location:io.github.rubenquadros.kovibes.api/KtorService.TokenResponse/tok
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/index.html
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService/KtorService/#kotlin.Function0[io.ktor.client.engine.HttpClientEngine]#kotlin.Function0[io.ktor.client.plugins.logging.Logger]#io.github.rubenquadros.kovibes.api.AuthStorage/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/-ktor-service.html
 $dokka.location:io.github.rubenquadros.kovibes.api/KtorService/client/#/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-ktor-service/client.html
-$dokka.location:io.github.rubenquadros.kovibes.api/SpotifyApi///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-spotify-api/index.html
-$dokka.location:io.github.rubenquadros.kovibes.api/SpotifyApi/createSpotifyApi/#kotlin.String#kotlin.String/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-spotify-api/create-spotify-api.html
 $dokka.location:io.github.rubenquadros.kovibes.api/SpotifyService///PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-spotify-service/index.html
 $dokka.location:io.github.rubenquadros.kovibes.api/SpotifyService/getCategories/#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-spotify-service/get-categories.html
 $dokka.location:io.github.rubenquadros.kovibes.api/SpotifyService/getFeaturedPlaylists/#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/-ko-vibes/io.github.rubenquadros.kovibes.api/-spotify-service/get-featured-playlists.html
