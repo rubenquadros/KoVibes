@@ -3,7 +3,7 @@
 Provides documentation for the KoVibes API.
 
 If you are interested about the public APIs refer the following files:
-- `SpotifyApi`
+- `KoVibesApi`
 - `SpotifyService`
 
 # Package io.github.rubenquadros.kovibes.api

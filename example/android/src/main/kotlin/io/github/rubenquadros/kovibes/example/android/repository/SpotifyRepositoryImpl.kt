@@ -1,6 +1,6 @@
 package io.github.rubenquadros.kovibes.example.android.repository
 
-import io.github.rubenquadros.kovibes.api.SpotifyApi
+import io.github.rubenquadros.kovibes.api.KoVibesApi
 import io.github.rubenquadros.kovibes.api.SpotifyService
 import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.Genres
@@ -12,7 +12,7 @@ import org.koin.core.annotation.Single
 @Single
 class SpotifyRepositoryImpl : SpotifyRepository {
 
-    private val spotifyService: SpotifyService = SpotifyApi.createSpotifyApi(
+    private val spotifyService: SpotifyService = KoVibesApi.createSpotifyService(
         clientId = BuildConfig.CLIENT_ID,
         clientSecret = BuildConfig.CLIENT_SECRET
     )

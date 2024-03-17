@@ -1,12 +1,12 @@
 package io.github.rubenquadros.kovibes.example.jvm
 
-import io.github.rubenquadros.kovibes.api.SpotifyApi
+import io.github.rubenquadros.kovibes.api.KoVibesApi
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import kotlinx.coroutines.runBlocking
 
 fun main() {
 
-    val spotifyService = SpotifyApi.createSpotifyApi(
+    val spotifyService = KoVibesApi.createSpotifyService(
         clientId = System.getenv("CLIENT_ID"),
         clientSecret = System.getenv("CLIENT_SECRET")
     )

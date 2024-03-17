@@ -6,9 +6,9 @@ import io.github.rubenquadros.kovibes.api.recommendations.RecommendationsApiImpl
 import io.github.rubenquadros.kovibes.api.search.SearchApiImpl
 
 /**
- * SpotifyApi is the entry class for your application.
+ * KoVibesApi is the entry class for your application.
  */
-object SpotifyApi {
+object KoVibesApi {
 
     private val authStorage: AuthStorage by lazy { AuthStorage() }
 
@@ -30,7 +30,7 @@ object SpotifyApi {
     }
 
     /**
-     * Returns a [SpotifyService] which can be used to call spotify APIs.
+     * Returns a [SpotifyService] which can be used to call Spotify APIs.
      *
      * See the [Doc to generate Client ID and Client Secret](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#:~:text=of%20your%20choice.-,Set%20Up%20Your%20Account,-Login%20to%20the).
      *
@@ -38,7 +38,7 @@ object SpotifyApi {
      * @param clientSecret
      * @return [SpotifyService]
      */
-    fun createSpotifyApi(clientId: String, clientSecret: String): SpotifyService {
+    fun createSpotifyService(clientId: String, clientSecret: String): SpotifyService {
         validateClientId(clientId)
         validateClientSecret(clientSecret)
 
