@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Publish
-        run: ./gradlew kovibes:publishAllPublicationsToKoVibesRepository --stacktrace
+        run: ./gradlew kovibes:publishAllPublicationsToKoVibesRepository
         env:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
