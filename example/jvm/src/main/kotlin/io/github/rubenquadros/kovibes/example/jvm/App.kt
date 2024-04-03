@@ -3,12 +3,21 @@ package io.github.rubenquadros.kovibes.example.jvm
 import io.github.rubenquadros.kovibes.api.KoVibesApi
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import kotlinx.coroutines.runBlocking
+import java.io.File
+import java.io.FileInputStream
+import java.util.Properties
 
 fun main() {
 
+    val localProperties = File("./local.properties").canonicalFile
+
+    val prop = Properties().apply {
+        load(FileInputStream(localProperties))
+    }
+
     val spotifyService = KoVibesApi.createSpotifyService(
-        clientId = System.getenv("CLIENT_ID"),
-        clientSecret = System.getenv("CLIENT_SECRET")
+        clientId = prop.getProperty("client.id"),
+        clientSecret = prop.getProperty("client.secret")
     )
 
     runBlocking {
