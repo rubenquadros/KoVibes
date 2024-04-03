@@ -2,7 +2,7 @@
 KoVibes is a Kotlin wrapper for the Spotify Web API.
 
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.rubenquadros/kovibes/0.0.1)](https://central.sonatype.com/artifact/io.github.rubenquadros/kovibes/0.0.1)
-![Github Actions](https://github.com/InsertKoinIO/koin/actions/workflows/build.yml/badge.svg)
+![Github Actions](https://github.com/rubenquadros/kovibes/actions/workflows/main.yml/badge.svg?branch=main)
 [![codecov](https://codecov.io/github/rubenquadros/KoVibes/graph/badge.svg?token=UJ0687GJ7R)](https://codecov.io/github/rubenquadros/KoVibes)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
