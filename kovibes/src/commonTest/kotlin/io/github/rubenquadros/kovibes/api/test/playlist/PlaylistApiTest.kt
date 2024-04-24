@@ -26,7 +26,7 @@ class PlaylistApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.playlists.items.isNotEmpty() }
+            { it.playlists.items.isNotEmpty() }
         )
     }
 
@@ -56,7 +56,7 @@ class PlaylistApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.items.isNotEmpty() }
+            { it.items.isNotEmpty() }
         )
     }
 

@@ -2,6 +2,8 @@ package io.github.rubenquadros.kovibes.api
 
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import io.github.rubenquadros.kovibes.api.response.Albums
+import io.github.rubenquadros.kovibes.api.response.Artist
+import io.github.rubenquadros.kovibes.api.response.ArtistTopTracks
 import io.github.rubenquadros.kovibes.api.response.Artists
 import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -214,4 +216,55 @@ interface SpotifyService {
     suspend fun getRecommendations(
         getRecommendationsRequest: GetRecommendationsRequest
     ): SpotifyApiResponse<Recommendations, ErrorBody>
+
+    /**
+     * Get artist API returns the information about the artist.
+     *
+     * See [Spotify Doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artist).
+     *
+     * @param id
+     * @return [Artist] when success and [ErrorBody] when error.
+     */
+    suspend fun getArtist(id: String): SpotifyApiResponse<Artist, ErrorBody>
+
+    /**
+     * Get artist albums API returns all the albums of the artist.
+     * This is a paginated API.
+     *
+     * `offset` is the page you are requesting for. Initially it will be 0.
+     *
+     * You will have to increment it for subsequent pages.
+     *
+     * You can know if there are more pages from [Albums.isNext].
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
+     *
+     * @param id
+     * @param includeGroups
+     * @param market
+     * @param limit
+     * @param offset
+     * @return [Albums] when success and [ErrorBody] when error.
+     */
+    suspend fun getArtistAlbums(
+        id: String,
+        includeGroups: List<String> = listOf("album"),
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<Albums, ErrorBody>
+
+    /**
+     * Get artist top tracks API returns the top tracks of the artist.
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks).
+     *
+     * @param id
+     * @param market
+     * @return [ArtistTopTracks] when success and [ErrorBody] when error.
+     */
+    suspend fun getArtistTopTracks(
+        id: String,
+        market: String? = null
+    ): SpotifyApiResponse<ArtistTopTracks, ErrorBody>
 }

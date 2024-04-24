@@ -13,7 +13,7 @@ import io.github.rubenquadros.kovibes.api.response.ErrorBody
 internal interface RecommendationsApi {
 
     /**
-     * Get recommendations returns all the recommended tracks based on the input provided.
+     * Get recommendations API returns all the recommended tracks based on the input provided.
      *
      * @param getRecommendationsRequest
      * @return [RecommendationsResponse] when success and [ErrorBody] when error.

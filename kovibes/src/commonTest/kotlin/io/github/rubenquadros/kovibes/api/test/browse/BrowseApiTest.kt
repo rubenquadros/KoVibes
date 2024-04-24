@@ -22,7 +22,7 @@ class BrowseApiTest {
         val response = browseApi.getGenres()
 
         response.assertApiResponseSuccess(
-            { response.result!!.genres.isNotEmpty() }
+            { it.genres.isNotEmpty() }
         )
     }
 
@@ -42,7 +42,7 @@ class BrowseApiTest {
         val response = browseApi.getCategories(locale = "en_US", limit = 20, offset = 0)
 
         response.assertApiResponseSuccess(
-            { response.result!!.categories.items.isNotEmpty() }
+            { it.categories.items.isNotEmpty() }
         )
     }
 

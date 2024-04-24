@@ -13,7 +13,7 @@ import io.github.rubenquadros.kovibes.api.response.ErrorBody
 internal interface PlaylistApi {
 
     /**
-     * Get featured playlists returns the current featured playlists on Spotify.
+     * Get featured playlists API returns the current featured playlists on Spotify.
      *
      * @param locale
      * @param limit
@@ -27,7 +27,7 @@ internal interface PlaylistApi {
     ): ApiResponse<FeaturedPlaylistsResponse, ErrorBody>
 
     /**
-     * Get playlist tracks returns all the tracks for the current playlist.
+     * Get playlist tracks API returns all the tracks for the current playlist.
      *
      * @param id
      * @param market

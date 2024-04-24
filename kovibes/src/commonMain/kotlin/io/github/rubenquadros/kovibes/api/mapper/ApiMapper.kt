@@ -1,12 +1,14 @@
 package io.github.rubenquadros.kovibes.api.mapper
 
 import io.github.rubenquadros.kovibes.api.models.AlbumInfo
+import io.github.rubenquadros.kovibes.api.models.AlbumResponse
 import io.github.rubenquadros.kovibes.api.models.ArtistInfo
 import io.github.rubenquadros.kovibes.api.models.ImageInfo
 import io.github.rubenquadros.kovibes.api.models.PlaylistInfo
 import io.github.rubenquadros.kovibes.api.models.TrackInfo
 import io.github.rubenquadros.kovibes.api.playlist.models.RestrictionInfo
 import io.github.rubenquadros.kovibes.api.response.Album
+import io.github.rubenquadros.kovibes.api.response.Albums
 import io.github.rubenquadros.kovibes.api.response.Artist
 import io.github.rubenquadros.kovibes.api.response.Image
 import io.github.rubenquadros.kovibes.api.response.Playlist
@@ -51,7 +53,8 @@ internal fun ArtistInfo.toArtist(): Artist {
  */
 internal fun AlbumInfo.toAlbum(): Album {
     return Album(
-        albumType = type,
+        albumGroup = albumGroup.orEmpty(),
+        albumType = albumType,
         availableMarkets = availableMarkets,
         id = id,
         name = name,
@@ -102,5 +105,16 @@ internal fun PlaylistInfo.toPlayList(): Playlist {
         images = images.map { imageInfo: ImageInfo ->
             imageInfo.toImage()
         }
+    )
+}
+
+/**
+ * @suppress
+ * Map [AlbumResponse] to [Albums]
+ */
+internal fun AlbumResponse.toAlbums(): Albums {
+    return Albums(
+        isNext = next != null,
+        items = items.map { it.toAlbum() }
     )
 }

@@ -39,7 +39,7 @@ class RecommendationsApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.tracks.isNotEmpty() }
+            { it.tracks.isNotEmpty() }
         )
     }
 
@@ -52,7 +52,7 @@ class RecommendationsApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.tracks.isNotEmpty() }
+            { it.tracks.isNotEmpty() }
         )
 
     }
@@ -66,7 +66,7 @@ class RecommendationsApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.tracks.isNotEmpty() }
+            { it.tracks.isNotEmpty() }
         )
     }
 
@@ -77,7 +77,7 @@ class RecommendationsApiTest {
         val response = recommendationsApi.getRecommendations(testRequest)
 
         response.assertApiResponseSuccess(
-            { response.result!!.tracks.isNotEmpty() }
+            { it.tracks.isNotEmpty() }
         )
 
     }

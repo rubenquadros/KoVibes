@@ -1,7 +1,11 @@
 package io.github.rubenquadros.kovibes.api
 
+import io.github.rubenquadros.kovibes.api.artist.ArtistApi
+import io.github.rubenquadros.kovibes.api.artist.toArtistTopTracks
 import io.github.rubenquadros.kovibes.api.browse.BrowseApi
 import io.github.rubenquadros.kovibes.api.browse.toCategories
+import io.github.rubenquadros.kovibes.api.mapper.toAlbums
+import io.github.rubenquadros.kovibes.api.mapper.toArtist
 import io.github.rubenquadros.kovibes.api.playlist.PlaylistApi
 import io.github.rubenquadros.kovibes.api.playlist.models.FeaturedPlaylistsResponse
 import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
@@ -11,6 +15,8 @@ import io.github.rubenquadros.kovibes.api.recommendations.RecommendationsApi
 import io.github.rubenquadros.kovibes.api.recommendations.toRecommendations
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import io.github.rubenquadros.kovibes.api.response.Albums
+import io.github.rubenquadros.kovibes.api.response.Artist
+import io.github.rubenquadros.kovibes.api.response.ArtistTopTracks
 import io.github.rubenquadros.kovibes.api.response.Artists
 import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -21,7 +27,6 @@ import io.github.rubenquadros.kovibes.api.response.Recommendations
 import io.github.rubenquadros.kovibes.api.response.SpotifyApiResponse
 import io.github.rubenquadros.kovibes.api.response.Tracks
 import io.github.rubenquadros.kovibes.api.search.SearchApi
-import io.github.rubenquadros.kovibes.api.search.toSearchAlbum
 import io.github.rubenquadros.kovibes.api.search.toSearchArtist
 import io.github.rubenquadros.kovibes.api.search.toSearchPlaylist
 import io.github.rubenquadros.kovibes.api.search.toSearchTrack
@@ -34,12 +39,14 @@ import io.github.rubenquadros.kovibes.api.search.toSearchTrack
  * @property browseApi
  * @property searchApi
  * @property recommendationsApi
+ * @property artistApi
  */
 internal class SpotifyServiceImpl(
     private val playlistApi: PlaylistApi,
     private val browseApi: BrowseApi,
     private val searchApi: SearchApi,
-    private val recommendationsApi: RecommendationsApi
+    private val recommendationsApi: RecommendationsApi,
+    private val artistApi: ArtistApi
 ) : SpotifyService {
     override suspend fun getFeaturedPlaylists(
         locale: String,
@@ -100,7 +107,7 @@ internal class SpotifyServiceImpl(
     ): SpotifyApiResponse<Albums, ErrorBody> {
         val response = searchApi.searchAlbum(query, market, limit, offset)
 
-        return response.getParsedApiResponse { it.toSearchAlbum() }
+        return response.getParsedApiResponse { it.albumResponse.toAlbums() }
     }
 
     override suspend fun searchArtist(
@@ -129,5 +136,32 @@ internal class SpotifyServiceImpl(
         val response = recommendationsApi.getRecommendations(getRecommendationsRequest)
 
         return response.getParsedApiResponse { it.toRecommendations() }
+    }
+
+    override suspend fun getArtist(id: String): SpotifyApiResponse<Artist, ErrorBody> {
+        val response = artistApi.getArtist(id)
+
+        return response.getParsedApiResponse { it.toArtist() }
+    }
+
+    override suspend fun getArtistAlbums(
+        id: String,
+        includeGroups: List<String>,
+        market: String?,
+        limit: Int,
+        offset: Int
+    ): SpotifyApiResponse<Albums, ErrorBody> {
+        val response = artistApi.getArtistAlbums(id, includeGroups, market, limit, offset)
+
+        return response.getParsedApiResponse { it.toAlbums() }
+    }
+
+    override suspend fun getArtistTopTracks(
+        id: String,
+        market: String?
+    ): SpotifyApiResponse<ArtistTopTracks, ErrorBody> {
+        val response = artistApi.getArtistTopTracks(id, market)
+
+        return response.getParsedApiResponse { it.toArtistTopTracks() }
     }
 }
