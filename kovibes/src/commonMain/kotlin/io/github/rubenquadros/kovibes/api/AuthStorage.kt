@@ -4,7 +4,6 @@ import kotlin.io.encoding.Base64
 
 /**
  * AuthStorage is responsible to store the [accessToken].
- *
  */
 internal class AuthStorage {
 

@@ -2,6 +2,7 @@ package io.github.rubenquadros.kovibes.api
 
 import io.github.rubenquadros.kovibes.api.artist.ArtistApiImpl
 import io.github.rubenquadros.kovibes.api.browse.BrowseApiImpl
+import io.github.rubenquadros.kovibes.api.config.Config
 import io.github.rubenquadros.kovibes.api.playlist.PlaylistApiImpl
 import io.github.rubenquadros.kovibes.api.recommendations.RecommendationsApiImpl
 import io.github.rubenquadros.kovibes.api.search.SearchApiImpl
@@ -13,11 +14,14 @@ object KoVibesApi {
 
     private val authStorage: AuthStorage by lazy { AuthStorage() }
 
+    private val configProvider: ConfigProvider by lazy { ConfigProvider() }
+
     private val ktorService: KtorService by lazy {
         KtorService(
             authStorage = authStorage,
             ktorEngine = { getKtorEngine() },
-            ktorLogger = { getKtorLogger() }
+            ktorLogger = { getKtorLogger() },
+            logLevel = { configProvider.getLogLevel() }
         )
     }
 
@@ -36,15 +40,23 @@ object KoVibesApi {
      *
      * See the [Doc to generate Client ID and Client Secret](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#:~:text=of%20your%20choice.-,Set%20Up%20Your%20Account,-Login%20to%20the).
      *
+     * See [Config] to know the default configuration.
+     *
      * @param clientId
      * @param clientSecret
+     * @param config
      * @return [SpotifyService]
      */
-    fun createSpotifyService(clientId: String, clientSecret: String): SpotifyService {
+    fun createSpotifyService(
+        clientId: String,
+        clientSecret: String,
+        config: Config = Config()
+    ): SpotifyService {
         validateClientId(clientId)
         validateClientSecret(clientSecret)
 
         authStorage.init(clientId, clientSecret)
+        configProvider.init(config)
         return spotifyService
     }
 
