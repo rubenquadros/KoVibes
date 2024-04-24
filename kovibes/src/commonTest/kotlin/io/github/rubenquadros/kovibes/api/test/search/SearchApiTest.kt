@@ -27,7 +27,7 @@ class SearchApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.tracks.items.isNotEmpty() }
+            { it.tracks.items.isNotEmpty() }
         )
     }
 
@@ -57,7 +57,7 @@ class SearchApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.artists.items.isNotEmpty() }
+            { it.artists.items.isNotEmpty() }
         )
     }
 
@@ -87,7 +87,7 @@ class SearchApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.albums.items.isNotEmpty() }
+            { it.albumResponse.items.isNotEmpty() }
         )
     }
 
@@ -117,7 +117,7 @@ class SearchApiTest {
         )
 
         response.assertApiResponseSuccess(
-            { response.result!!.playlists.items.isNotEmpty() }
+            { it.playlists.items.isNotEmpty() }
         )
     }
 

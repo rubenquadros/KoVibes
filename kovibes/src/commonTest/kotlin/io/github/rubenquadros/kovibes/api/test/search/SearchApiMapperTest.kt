@@ -1,10 +1,8 @@
 package io.github.rubenquadros.kovibes.api.test.search
 
-import io.github.rubenquadros.kovibes.api.search.models.SearchAlbumResponse
 import io.github.rubenquadros.kovibes.api.search.models.SearchArtistResponse
 import io.github.rubenquadros.kovibes.api.search.models.SearchPlaylistResponse
 import io.github.rubenquadros.kovibes.api.search.models.SearchTrackResponse
-import io.github.rubenquadros.kovibes.api.search.toSearchAlbum
 import io.github.rubenquadros.kovibes.api.search.toSearchArtist
 import io.github.rubenquadros.kovibes.api.search.toSearchPlaylist
 import io.github.rubenquadros.kovibes.api.search.toSearchTrack
@@ -38,19 +36,6 @@ class SearchApiMapperTest {
 
         assertTrue {
             searchArtistsResponseJson.artists.items.size == searchArtists.items.size
-        }
-    }
-
-    @Test
-    fun `search albums response is mapped to albums`() {
-        val searchAlbumsResponseJson = Json.decodeFromString<SearchAlbumResponse>(
-            getExpectedResponse("search/albums.json")
-        )
-
-        val searchAlbums = searchAlbumsResponseJson.toSearchAlbum()
-
-        assertTrue {
-            searchAlbumsResponseJson.albums.items.size == searchAlbums.items.size
         }
     }
 

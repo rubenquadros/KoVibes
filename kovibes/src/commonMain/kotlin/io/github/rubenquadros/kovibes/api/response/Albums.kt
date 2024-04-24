@@ -6,6 +6,7 @@ data class Albums(
 )
 
 data class Album(
+    val albumGroup: String,
     val albumType: String,
     val artists: List<Artist>,
     val availableMarkets: List<String>?,

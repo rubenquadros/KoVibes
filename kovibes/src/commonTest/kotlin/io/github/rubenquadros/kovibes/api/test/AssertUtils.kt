@@ -4,10 +4,12 @@ import io.github.rubenquadros.kovibes.api.ApiResponse
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.SpotifyApiResponse
 
-internal fun <SUCCESS, ERROR> ApiResponse<SUCCESS, ERROR>.assertApiResponseSuccess(vararg successBlock: () -> Boolean) {
+@Suppress("UNCHECKED_CAST")
+internal fun <SUCCESS, ERROR> ApiResponse<SUCCESS, ERROR>.assertApiResponseSuccess(vararg successBlock: (result: SUCCESS) -> Boolean) {
     assert(failure == null)
+    assert(result != null)
     successBlock.forEach { block ->
-        assert(block())
+        assert(block(result as SUCCESS))
     }
 }
 
@@ -17,10 +19,10 @@ internal fun <SUCCESS, ERROR> ApiResponse<SUCCESS, ERROR>.assertApiResponseFailu
     assert((failure as ErrorBody).error.status == 500)
 }
 
-internal fun <SUCCESS, ERROR> SpotifyApiResponse<SUCCESS, ERROR>.assertSpotifyApiSuccess(vararg successBlock: () -> Boolean) {
+internal fun <SUCCESS, ERROR> SpotifyApiResponse<SUCCESS, ERROR>.assertSpotifyApiSuccess(vararg successBlock: (result: SUCCESS) -> Boolean) {
     assert(this is SpotifyApiResponse.Success)
     successBlock.forEach { block ->
-        assert(block())
+        assert(block((this as SpotifyApiResponse.Success).result))
     }
 }
 

@@ -16,6 +16,7 @@ class BrowseApiMapperTest {
         )
 
         val categories = categoriesResponseJson.toCategories()
+
         assertTrue {
             categories.items.size == categoriesResponseJson.categories.items.size
         }

@@ -4,7 +4,6 @@ import io.github.rubenquadros.kovibes.api.SpotifyServiceImpl
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import io.github.rubenquadros.kovibes.api.test.assertSpotifyApiError
 import io.github.rubenquadros.kovibes.api.test.assertSpotifyApiSuccess
-import io.github.rubenquadros.kovibes.api.test.getSuccessSpotifyApiResponse
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
@@ -14,7 +13,8 @@ class SpotifyServiceTest {
         FakePlaylistApi(),
         FakeBrowseApi(),
         FakeSearchApi(),
-        FakeRecommendationsApi()
+        FakeRecommendationsApi(),
+        FakeArtistApi()
     )
 
     @Test
@@ -24,8 +24,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getFeaturedPlaylists()
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -45,8 +45,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getPlaylistTracks("123")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().tracks.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext.not() }
+            { it.tracks.isNotEmpty() },
+            { it.isNext.not() }
         )
     }
 
@@ -66,7 +66,7 @@ class SpotifyServiceTest {
         val response = spotifyService.getGenres()
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().genres.isNotEmpty() }
+            { it.genres.isNotEmpty() }
         )
     }
 
@@ -86,8 +86,8 @@ class SpotifyServiceTest {
         val response = spotifyService.getCategories()
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -107,8 +107,8 @@ class SpotifyServiceTest {
         val response = spotifyService.searchTrack("rap")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -128,8 +128,8 @@ class SpotifyServiceTest {
         val response = spotifyService.searchArtist("rap")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -149,8 +149,8 @@ class SpotifyServiceTest {
         val response = spotifyService.searchAlbum("rap")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -170,8 +170,8 @@ class SpotifyServiceTest {
         val response = spotifyService.searchPlaylist("rap")
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().items.isNotEmpty() },
-            { response.getSuccessSpotifyApiResponse().isNext }
+            { it.items.isNotEmpty() },
+            { it.isNext }
         )
     }
 
@@ -191,7 +191,7 @@ class SpotifyServiceTest {
         val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedArtists = listOf("1234")))
 
         response.assertSpotifyApiSuccess(
-            { response.getSuccessSpotifyApiResponse().tracks.isNotEmpty() }
+            { it.tracks.isNotEmpty() }
         )
     }
 
@@ -200,6 +200,67 @@ class SpotifyServiceTest {
         FakeRecommendationsApi.isSuccess = false
 
         val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedTracks = listOf("1234")))
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get artist responds success then response is received`() = runTest {
+        FakeArtistApi.isSuccess = true
+
+        val response = spotifyService.getArtist(id = "123")
+
+        response.assertSpotifyApiSuccess(
+            { it.id == "06HL4z0CvFAxyc27GXpf02" }
+        )
+    }
+
+    @Test
+    fun `when get artist responds error then error is received`() = runTest {
+        FakeArtistApi.isSuccess = false
+
+        val response = spotifyService.getArtist(id = "123")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get artist albums responds success then response is received`() = runTest {
+        FakeArtistApi.isSuccess = true
+
+        val response = spotifyService.getArtistAlbums(id = "456")
+
+        response.assertSpotifyApiSuccess(
+            { it.items.isNotEmpty() },
+            { it.isNext }
+        )
+    }
+
+    @Test
+    fun `when get artist albums responds error then error is received`() = runTest {
+        FakeArtistApi.isSuccess = false
+
+        val response = spotifyService.getArtistAlbums(id = "456")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get artist top tracks responds success then response is received`() = runTest {
+        FakeArtistApi.isSuccess = true
+
+        val response = spotifyService.getArtistTopTracks(id = "678")
+
+        response.assertSpotifyApiSuccess(
+            { it.tracks.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get artist top tracks responds error then error is received`() = runTest {
+        FakeArtistApi.isSuccess = false
+
+        val response = spotifyService.getArtistTopTracks(id = "678")
 
         response.assertSpotifyApiError()
     }

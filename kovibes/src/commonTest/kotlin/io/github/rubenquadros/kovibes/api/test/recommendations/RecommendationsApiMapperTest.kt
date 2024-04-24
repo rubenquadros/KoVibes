@@ -16,6 +16,7 @@ class RecommendationsApiMapperTest {
         )
 
         val recommendations = recommendationsResponseJson.toRecommendations()
+
         assertTrue {
             recommendations.tracks.size == recommendationsResponseJson.tracks.size
         }
