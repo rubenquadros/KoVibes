@@ -2,6 +2,7 @@ package io.github.rubenquadros.kovibes.api.test
 
 import io.github.rubenquadros.kovibes.api.AuthStorage
 import io.github.rubenquadros.kovibes.api.KtorService
+import io.github.rubenquadros.kovibes.api.config.logger.LogLevel
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.client.plugins.logging.Logger
@@ -15,7 +16,8 @@ object MockKtorService {
         return KtorService(
             authStorage = AuthStorage(),
             ktorEngine = { createMockEngine(mockConfig) },
-            ktorLogger = { Logger.SIMPLE }
+            ktorLogger = { Logger.SIMPLE },
+            logLevel = { LogLevel.NONE }
         )
     }
 

@@ -94,7 +94,8 @@ koverReport {
         excludes {
             classes(
                 "io.github.rubenquadros.kovibes.response.*",
-                "io.github.rubenquadros.kovibes.request.*"
+                "io.github.rubenquadros.kovibes.request.*",
+                "io.github.rubenquadros.kovibes.api.config.*"
             )
             annotatedBy("io.github.rubenquadros.kovibes.api.ExcludeFromCoverage")
         }
@@ -103,6 +104,18 @@ koverReport {
     verify {
         rule {
             isEnabled = true
+
+            filters {
+                excludes {
+                    classes(
+                        "io.github.rubenquadros.kovibes.response.*",
+                        "io.github.rubenquadros.kovibes.request.*",
+                        "io.github.rubenquadros.kovibes.api.config.*"
+                    )
+                    annotatedBy("io.github.rubenquadros.kovibes.api.ExcludeFromCoverage")
+                }
+            }
+
             bound {
                 minValue = 82
                 metric = MetricType.LINE

@@ -14,10 +14,10 @@ import io.github.rubenquadros.kovibes.api.models.PlaylistInfo
 import io.github.rubenquadros.kovibes.api.models.PlaylistOwner
 import io.github.rubenquadros.kovibes.api.models.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.models.TrackInfo
-import io.github.rubenquadros.kovibes.api.playlist.models.RestrictionInfo
 import io.github.rubenquadros.kovibes.api.test.albumInfo
 import io.github.rubenquadros.kovibes.api.test.artistInfo
 import io.github.rubenquadros.kovibes.api.test.imageInfo
+import io.github.rubenquadros.kovibes.api.test.restrictionInfo
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -34,9 +34,7 @@ class ApiMapperTest {
 
     @Test
     fun `restriction info is mapped to restrictions`() {
-        val restrictionInfo = RestrictionInfo(
-            reason = "Reason for restriction"
-        )
+        val restrictionInfo = restrictionInfo
 
         val restrictions = restrictionInfo.toRestrictions()
 

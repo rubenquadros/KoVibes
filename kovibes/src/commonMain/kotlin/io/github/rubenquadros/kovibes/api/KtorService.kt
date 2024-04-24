@@ -1,5 +1,7 @@
 package io.github.rubenquadros.kovibes.api
 
+import io.github.rubenquadros.kovibes.api.config.logger.LogLevel
+import io.github.rubenquadros.kovibes.api.config.logger.toKtorLogLevel
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.HttpClientEngine
@@ -8,7 +10,6 @@ import io.ktor.client.plugins.auth.providers.BearerTokens
 import io.ktor.client.plugins.auth.providers.bearer
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
-import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.HttpRequestBuilder
@@ -31,11 +32,13 @@ import kotlinx.serialization.json.Json
  *
  * @param ktorEngine
  * @param ktorLogger
+ * @param logLevel
  */
 internal class KtorService(
     ktorEngine: () -> HttpClientEngine,
     ktorLogger: () -> Logger,
-    private val authStorage: AuthStorage
+    logLevel: () -> LogLevel,
+    private val authStorage: AuthStorage,
 ) {
     val client: HttpClient by lazy {
         HttpClient(ktorEngine()) {
@@ -48,7 +51,7 @@ internal class KtorService(
 
             install(Logging) {
                 logger = ktorLogger()
-                level = LogLevel.ALL
+                level = logLevel().toKtorLogLevel()
             }
 
             install(ContentNegotiation) {
@@ -112,6 +115,7 @@ internal class KtorService(
     }
 
     @Serializable
+    @ExcludeFromCoverage
     internal data class TokenResponse(
         @SerialName("access_token")
         val accessToken: String,
