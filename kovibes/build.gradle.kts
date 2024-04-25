@@ -93,8 +93,8 @@ koverReport {
     filters {
         excludes {
             classes(
-                "io.github.rubenquadros.kovibes.response.*",
-                "io.github.rubenquadros.kovibes.request.*",
+                "io.github.rubenquadros.kovibes.api.response.*",
+                "io.github.rubenquadros.kovibes.api.request.*",
                 "io.github.rubenquadros.kovibes.api.config.*"
             )
             annotatedBy("io.github.rubenquadros.kovibes.api.ExcludeFromCoverage")
@@ -108,8 +108,8 @@ koverReport {
             filters {
                 excludes {
                     classes(
-                        "io.github.rubenquadros.kovibes.response.*",
-                        "io.github.rubenquadros.kovibes.request.*",
+                        "io.github.rubenquadros.kovibes.api.response.*",
+                        "io.github.rubenquadros.kovibes.api.request.*",
                         "io.github.rubenquadros.kovibes.api.config.*"
                     )
                     annotatedBy("io.github.rubenquadros.kovibes.api.ExcludeFromCoverage")
