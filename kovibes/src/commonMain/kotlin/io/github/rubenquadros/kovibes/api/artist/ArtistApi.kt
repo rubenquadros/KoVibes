@@ -2,6 +2,7 @@ package io.github.rubenquadros.kovibes.api.artist
 
 import io.github.rubenquadros.kovibes.api.ApiResponse
 import io.github.rubenquadros.kovibes.api.artist.models.GetArtistTopTracksResponse
+import io.github.rubenquadros.kovibes.api.artist.models.GetRelatedArtistsResponse
 import io.github.rubenquadros.kovibes.api.models.AlbumResponse
 import io.github.rubenquadros.kovibes.api.models.ArtistInfo
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -51,4 +52,12 @@ internal interface ArtistApi {
         id: String,
         market: String?
     ): ApiResponse<GetArtistTopTracksResponse, ErrorBody>
+
+    /**
+     * Get related artists API returns the information about artists similar to the given artist.
+     *
+     * @param id
+     * @return [GetRelatedArtistsResponse] when success and [ErrorBody] when error.
+     */
+    suspend fun getRelatedArtists(id: String): ApiResponse<GetRelatedArtistsResponse, ErrorBody>
 }

@@ -79,6 +79,26 @@ class ArtistApiTest {
         response.assertApiResponseFailure()
     }
 
+    @Test
+    fun `when related artists spotify api responds success then result is received`() = runTest {
+        MockKtorService.isSuccess = true
+
+        val response = artistApi.getRelatedArtists(id = "567")
+
+        response.assertApiResponseSuccess(
+            { it.artists.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when related artists spotify api responds error then failure is received`() = runTest {
+        MockKtorService.isSuccess = false
+
+        val response = artistApi.getRelatedArtists(id = "567")
+
+        response.assertApiResponseFailure()
+    }
+
     private fun createMockArtistConfig() = mapOf(
         "artists/123" to MockResponse(
             expectedSuccessResponsePath = "artist/artist.json",
@@ -90,6 +110,10 @@ class ArtistApiTest {
         ),
         "artists/678/top-tracks" to MockResponse(
             expectedSuccessResponsePath = "artist/top_tracks.json",
+            expectedErrorResponsePath = errorResponsePath
+        ),
+        "artists/567/related-artists" to MockResponse(
+            expectedSuccessResponsePath = "artist/related_artists.json",
             expectedErrorResponsePath = errorResponsePath
         )
     )

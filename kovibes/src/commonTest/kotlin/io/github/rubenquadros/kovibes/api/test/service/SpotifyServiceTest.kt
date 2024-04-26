@@ -264,4 +264,24 @@ class SpotifyServiceTest {
 
         response.assertSpotifyApiError()
     }
+
+    @Test
+    fun `when get related artists responds success then response is received`() = runTest {
+        FakeArtistApi.isSuccess = true
+
+        val response = spotifyService.getRelatedArtists(id = "567")
+
+        response.assertSpotifyApiSuccess(
+            { it.artists.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get related artists responds error then error is received`() = runTest {
+        FakeArtistApi.isSuccess = false
+
+        val response = spotifyService.getRelatedArtists(id = "567")
+
+        response.assertSpotifyApiError()
+    }
 }

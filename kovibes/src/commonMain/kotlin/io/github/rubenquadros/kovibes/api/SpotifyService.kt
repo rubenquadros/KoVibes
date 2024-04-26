@@ -11,6 +11,7 @@ import io.github.rubenquadros.kovibes.api.response.Genres
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
+import io.github.rubenquadros.kovibes.api.response.RelatedArtists
 import io.github.rubenquadros.kovibes.api.response.SpotifyApiResponse
 import io.github.rubenquadros.kovibes.api.response.Tracks
 
@@ -267,4 +268,14 @@ interface SpotifyService {
         id: String,
         market: String? = null
     ): SpotifyApiResponse<ArtistTopTracks, ErrorBody>
+
+    /**
+     * Get related artists API returns the artists similar to the given artist.
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists).
+     *
+     * @param id
+     * @return [RelatedArtists] when success and [ErrorBody] when error.
+     */
+    suspend fun getRelatedArtists(id: String): SpotifyApiResponse<RelatedArtists, ErrorBody>
 }
