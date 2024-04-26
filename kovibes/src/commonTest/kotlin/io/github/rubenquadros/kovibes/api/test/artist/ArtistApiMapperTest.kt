@@ -5,7 +5,7 @@ import io.github.rubenquadros.kovibes.api.artist.models.GetRelatedArtistsRespons
 import io.github.rubenquadros.kovibes.api.artist.toArtistTopTracks
 import io.github.rubenquadros.kovibes.api.artist.toRelatedArtists
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -13,7 +13,7 @@ class ArtistApiMapperTest {
 
     @Test
     fun `artist top tracks response is mapped to artist top tracks`() {
-        val artistTopTracksResponse = Json.decodeFromString<GetArtistTopTracksResponse>(
+        val artistTopTracksResponse = json.decodeFromString<GetArtistTopTracksResponse>(
             getExpectedResponse("artist/top_tracks.json")
         )
 
@@ -26,7 +26,7 @@ class ArtistApiMapperTest {
 
     @Test
     fun `related artists response is mapped to related artists`() {
-        val relatedArtistsResponse = Json.decodeFromString<GetRelatedArtistsResponse>(
+        val relatedArtistsResponse = json.decodeFromString<GetRelatedArtistsResponse>(
             getExpectedResponse("artist/related_artists.json")
         )
 

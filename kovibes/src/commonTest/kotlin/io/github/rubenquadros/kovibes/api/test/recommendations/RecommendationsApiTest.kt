@@ -11,7 +11,7 @@ import io.github.rubenquadros.kovibes.api.test.assertApiResponseFailure
 import io.github.rubenquadros.kovibes.api.test.assertApiResponseSuccess
 import io.github.rubenquadros.kovibes.api.test.errorResponsePath
 import kotlinx.coroutines.test.runTest
-import org.junit.Test
+import kotlin.test.Test
 
 class RecommendationsApiTest {
 

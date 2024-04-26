@@ -7,15 +7,15 @@ import io.github.rubenquadros.kovibes.api.search.toSearchArtist
 import io.github.rubenquadros.kovibes.api.search.toSearchPlaylist
 import io.github.rubenquadros.kovibes.api.search.toSearchTrack
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
-import org.junit.Test
+import io.github.rubenquadros.kovibes.api.test.json
+import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class SearchApiMapperTest {
 
     @Test
     fun `search tracks response is mapped to tracks`() {
-        val searchTracksResponseJson = Json.decodeFromString<SearchTrackResponse>(
+        val searchTracksResponseJson = json.decodeFromString<SearchTrackResponse>(
             getExpectedResponse("search/tracks.json")
         )
 
@@ -28,7 +28,7 @@ class SearchApiMapperTest {
 
     @Test
     fun `search artists response is mapped to artists`() {
-        val searchArtistsResponseJson = Json.decodeFromString<SearchArtistResponse>(
+        val searchArtistsResponseJson = json.decodeFromString<SearchArtistResponse>(
             getExpectedResponse("search/artists.json")
         )
 
@@ -41,7 +41,7 @@ class SearchApiMapperTest {
 
     @Test
     fun `search playlists response is mapped to playlists`() {
-        val searchPlaylistsResponseJson = Json.decodeFromString<SearchPlaylistResponse>(
+        val searchPlaylistsResponseJson = json.decodeFromString<SearchPlaylistResponse>(
             getExpectedResponse("search/playlists.json")
         )
 

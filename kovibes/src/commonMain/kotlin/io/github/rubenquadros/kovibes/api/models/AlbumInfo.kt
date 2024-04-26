@@ -56,5 +56,9 @@ internal data class AlbumInfo(
     @SerialName("type")
     val type: String,
     @SerialName("uri")
-    val uri: String
+    val uri: String,
+    @SerialName("genres")
+    val genres: List<String>? = null,
+    @SerialName("label")
+    val label: String? = null
 )

@@ -5,7 +5,7 @@ import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import io.github.rubenquadros.kovibes.api.test.assertSpotifyApiError
 import io.github.rubenquadros.kovibes.api.test.assertSpotifyApiSuccess
 import kotlinx.coroutines.test.runTest
-import org.junit.Test
+import kotlin.test.Test
 
 class SpotifyServiceTest {
 
@@ -14,7 +14,8 @@ class SpotifyServiceTest {
         FakeBrowseApi(),
         FakeSearchApi(),
         FakeRecommendationsApi(),
-        FakeArtistApi()
+        FakeArtistApi(),
+        FakeAlbumApi()
     )
 
     @Test
@@ -188,7 +189,8 @@ class SpotifyServiceTest {
     fun `when get recommendations responds success then response is received`() = runTest {
         FakeRecommendationsApi.isSuccess = true
 
-        val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedArtists = listOf("1234")))
+        val response =
+            spotifyService.getRecommendations(GetRecommendationsRequest(seedArtists = listOf("1234")))
 
         response.assertSpotifyApiSuccess(
             { it.tracks.isNotEmpty() }
@@ -199,7 +201,8 @@ class SpotifyServiceTest {
     fun `when get recommendations responds error then error is received`() = runTest {
         FakeRecommendationsApi.isSuccess = false
 
-        val response = spotifyService.getRecommendations(GetRecommendationsRequest(seedTracks = listOf("1234")))
+        val response =
+            spotifyService.getRecommendations(GetRecommendationsRequest(seedTracks = listOf("1234")))
 
         response.assertSpotifyApiError()
     }
@@ -281,6 +284,66 @@ class SpotifyServiceTest {
         FakeArtistApi.isSuccess = false
 
         val response = spotifyService.getRelatedArtists(id = "567")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get album responds success then response is received`() = runTest {
+        FakeAlbumApi.isSuccess = true
+
+        val response = spotifyService.getAlbum(id = "123")
+
+        response.assertSpotifyApiSuccess(
+            { it.artists.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get album responds error then error is received`() = runTest {
+        FakeAlbumApi.isSuccess = false
+
+        val response = spotifyService.getAlbum(id = "123")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get album tracks responds success then response is received`() = runTest {
+        FakeAlbumApi.isSuccess = true
+
+        val response = spotifyService.getAlbumTracks(id = "123")
+
+        response.assertSpotifyApiSuccess(
+            { it.items.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get album tracks responds error then error is received`() = runTest {
+        FakeAlbumApi.isSuccess = false
+
+        val response = spotifyService.getAlbumTracks(id = "123")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
+    fun `when get new album releases responds success ten response is received`() = runTest {
+        FakeAlbumApi.isSuccess = true
+
+        val response = spotifyService.getNewAlbumReleases()
+
+        response.assertSpotifyApiSuccess(
+            { it.items.isNotEmpty() }
+        )
+    }
+
+    @Test
+    fun `when get new album releases responds error then error is received`() = runTest {
+        FakeAlbumApi.isSuccess = false
+
+        val response = spotifyService.getNewAlbumReleases()
 
         response.assertSpotifyApiError()
     }

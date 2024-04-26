@@ -1,6 +1,8 @@
 package io.github.rubenquadros.kovibes.api
 
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
+import io.github.rubenquadros.kovibes.api.response.Album
+import io.github.rubenquadros.kovibes.api.response.AlbumTracks
 import io.github.rubenquadros.kovibes.api.response.Albums
 import io.github.rubenquadros.kovibes.api.response.Artist
 import io.github.rubenquadros.kovibes.api.response.ArtistTopTracks
@@ -8,6 +10,7 @@ import io.github.rubenquadros.kovibes.api.response.Artists
 import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.Genres
+import io.github.rubenquadros.kovibes.api.response.NewAlbumReleases
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
@@ -278,4 +281,61 @@ interface SpotifyService {
      * @return [RelatedArtists] when success and [ErrorBody] when error.
      */
     suspend fun getRelatedArtists(id: String): SpotifyApiResponse<RelatedArtists, ErrorBody>
+
+    /**
+     * Get album API returns the details about an album.
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-album).
+     *
+     * @param id
+     * @param market
+     * @return [Album] when success and [ErrorBody] when error.
+     */
+    suspend fun getAlbum(id: String, market: String? = null): SpotifyApiResponse<Album, ErrorBody>
+
+    /**
+     * Get album tracks API returns all the tracks in an album.
+     * This is a paginated API.
+     *
+     * `offset` is the page you are requesting for. Initially it will be 0.
+     *
+     * You will have to increment it for subsequent pages.
+     *
+     * You can know if there are more pages from [Tracks.isNext].
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-albums-tracks).
+     *
+     * @param id
+     * @param market
+     * @param limit
+     * @param offset
+     * @return [AlbumTracks] when success and [ErrorBody] when error.
+     */
+    suspend fun getAlbumTracks(
+        id: String,
+        market: String? = null,
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<AlbumTracks, ErrorBody>
+
+    /**
+     * Get new album releases API returns all the new album releases.
+     * This is a paginated API.
+     *
+     * `offset` is the page you are requesting for. Initially it will be 0.
+     *
+     * You will have to increment it for subsequent pages.
+     *
+     * You can know if there are more pages from [NewAlbumReleases.isNext].
+     *
+     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-new-releases).
+     *
+     * @param limit
+     * @param offset
+     * @return [NewAlbumReleases] when success and [ErrorBody] when error.
+     */
+    suspend fun getNewAlbumReleases(
+        limit: Int = 20,
+        offset: Int = 0
+    ): SpotifyApiResponse<NewAlbumReleases, ErrorBody>
 }

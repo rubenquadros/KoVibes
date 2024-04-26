@@ -7,7 +7,7 @@ import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.test.getApiResponse
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 
 internal class FakePlaylistApi : PlaylistApi {
 
@@ -21,7 +21,7 @@ internal class FakePlaylistApi : PlaylistApi {
         offset: Int
     ): ApiResponse<FeaturedPlaylistsResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("playlist/featured_playlists.json"))
+            json.decodeFromString(getExpectedResponse("playlist/featured_playlists.json"))
         }
     }
 
@@ -33,7 +33,7 @@ internal class FakePlaylistApi : PlaylistApi {
         offset: Int
     ): ApiResponse<PlaylistTracksResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("playlist/playlist_tracks.json"))
+            json.decodeFromString(getExpectedResponse("playlist/playlist_tracks.json"))
         }
     }
 }
