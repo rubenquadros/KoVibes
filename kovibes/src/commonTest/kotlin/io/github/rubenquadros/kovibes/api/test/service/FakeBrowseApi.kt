@@ -7,7 +7,7 @@ import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.Genres
 import io.github.rubenquadros.kovibes.api.test.getApiResponse
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 
 internal class FakeBrowseApi : BrowseApi {
 
@@ -17,7 +17,7 @@ internal class FakeBrowseApi : BrowseApi {
 
     override suspend fun getGenres(): ApiResponse<Genres, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("browse/genres.json"))
+            json.decodeFromString(getExpectedResponse("browse/genres.json"))
         }
     }
 
@@ -27,7 +27,7 @@ internal class FakeBrowseApi : BrowseApi {
         offset: Int
     ): ApiResponse<CategoriesResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("browse/categories.json"))
+            json.decodeFromString(getExpectedResponse("browse/categories.json"))
         }
     }
 }

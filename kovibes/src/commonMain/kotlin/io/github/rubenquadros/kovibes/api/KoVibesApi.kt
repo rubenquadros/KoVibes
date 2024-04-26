@@ -1,5 +1,6 @@
 package io.github.rubenquadros.kovibes.api
 
+import io.github.rubenquadros.kovibes.api.album.AlbumApiImpl
 import io.github.rubenquadros.kovibes.api.artist.ArtistApiImpl
 import io.github.rubenquadros.kovibes.api.browse.BrowseApiImpl
 import io.github.rubenquadros.kovibes.api.config.Config
@@ -31,7 +32,8 @@ object KoVibesApi {
             browseApi = BrowseApiImpl(ktorService),
             searchApi = SearchApiImpl(ktorService),
             recommendationsApi = RecommendationsApiImpl(ktorService),
-            artistApi = ArtistApiImpl(ktorService)
+            artistApi = ArtistApiImpl(ktorService),
+            albumApi = AlbumApiImpl(ktorService)
         )
     }
 

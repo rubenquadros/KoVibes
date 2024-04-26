@@ -1,20 +1,24 @@
 package io.github.rubenquadros.kovibes.api
 
+import io.github.rubenquadros.kovibes.api.album.AlbumApi
+import io.github.rubenquadros.kovibes.api.album.toAlbumTracks
+import io.github.rubenquadros.kovibes.api.album.toNewAlbumReleases
 import io.github.rubenquadros.kovibes.api.artist.ArtistApi
 import io.github.rubenquadros.kovibes.api.artist.toArtistTopTracks
 import io.github.rubenquadros.kovibes.api.artist.toRelatedArtists
 import io.github.rubenquadros.kovibes.api.browse.BrowseApi
 import io.github.rubenquadros.kovibes.api.browse.toCategories
+import io.github.rubenquadros.kovibes.api.mapper.toAlbum
 import io.github.rubenquadros.kovibes.api.mapper.toAlbums
 import io.github.rubenquadros.kovibes.api.mapper.toArtist
 import io.github.rubenquadros.kovibes.api.playlist.PlaylistApi
-import io.github.rubenquadros.kovibes.api.playlist.models.FeaturedPlaylistsResponse
-import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
 import io.github.rubenquadros.kovibes.api.playlist.toFeaturedPlayLists
 import io.github.rubenquadros.kovibes.api.playlist.toPlaylistTracks
 import io.github.rubenquadros.kovibes.api.recommendations.RecommendationsApi
 import io.github.rubenquadros.kovibes.api.recommendations.toRecommendations
 import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
+import io.github.rubenquadros.kovibes.api.response.Album
+import io.github.rubenquadros.kovibes.api.response.AlbumTracks
 import io.github.rubenquadros.kovibes.api.response.Albums
 import io.github.rubenquadros.kovibes.api.response.Artist
 import io.github.rubenquadros.kovibes.api.response.ArtistTopTracks
@@ -22,6 +26,7 @@ import io.github.rubenquadros.kovibes.api.response.Artists
 import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.Genres
+import io.github.rubenquadros.kovibes.api.response.NewAlbumReleases
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
@@ -42,21 +47,22 @@ import io.github.rubenquadros.kovibes.api.search.toSearchTrack
  * @property searchApi
  * @property recommendationsApi
  * @property artistApi
+ * @property albumApi
  */
 internal class SpotifyServiceImpl(
     private val playlistApi: PlaylistApi,
     private val browseApi: BrowseApi,
     private val searchApi: SearchApi,
     private val recommendationsApi: RecommendationsApi,
-    private val artistApi: ArtistApi
+    private val artistApi: ArtistApi,
+    private val albumApi: AlbumApi
 ) : SpotifyService {
     override suspend fun getFeaturedPlaylists(
         locale: String,
         limit: Int,
         offset: Int
     ): SpotifyApiResponse<Playlists, ErrorBody> {
-        val response: ApiResponse<FeaturedPlaylistsResponse, ErrorBody> =
-            playlistApi.getFeaturedPlaylists(locale, limit, offset)
+        val response = playlistApi.getFeaturedPlaylists(locale, limit, offset)
 
         return response.getParsedApiResponse { it.toFeaturedPlayLists() }
     }
@@ -68,8 +74,7 @@ internal class SpotifyServiceImpl(
         limit: Int,
         offset: Int
     ): SpotifyApiResponse<PlaylistTracks, ErrorBody> {
-        val response: ApiResponse<PlaylistTracksResponse, ErrorBody> =
-            playlistApi.getPlaylistTracks(id, market, fields, limit, offset)
+        val response = playlistApi.getPlaylistTracks(id, market, fields, limit, offset)
 
         return response.getParsedApiResponse { it.toPlaylistTracks() }
     }
@@ -171,5 +176,34 @@ internal class SpotifyServiceImpl(
         val response = artistApi.getRelatedArtists(id)
 
         return response.getParsedApiResponse { it.toRelatedArtists() }
+    }
+
+    override suspend fun getAlbum(
+        id: String,
+        market: String?
+    ): SpotifyApiResponse<Album, ErrorBody> {
+        val response = albumApi.getAlbum(id, market)
+
+        return response.getParsedApiResponse { it.toAlbum() }
+    }
+
+    override suspend fun getAlbumTracks(
+        id: String,
+        market: String?,
+        limit: Int,
+        offset: Int
+    ): SpotifyApiResponse<AlbumTracks, ErrorBody> {
+        val response = albumApi.getAlbumTracks(id, market, limit, offset)
+
+        return response.getParsedApiResponse { it.toAlbumTracks() }
+    }
+
+    override suspend fun getNewAlbumReleases(
+        limit: Int,
+        offset: Int
+    ): SpotifyApiResponse<NewAlbumReleases, ErrorBody> {
+        val response = albumApi.getNewAlbumReleases(limit, offset)
+
+        return response.getParsedApiResponse { it.toNewAlbumReleases() }
     }
 }

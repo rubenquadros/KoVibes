@@ -2,7 +2,7 @@ package io.github.rubenquadros.kovibes.api.test.spotify
 
 import io.github.rubenquadros.kovibes.api.KoVibesApi
 import org.junit.Assert.assertThrows
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 

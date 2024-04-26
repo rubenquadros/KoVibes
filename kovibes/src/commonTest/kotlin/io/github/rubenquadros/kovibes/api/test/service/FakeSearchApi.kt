@@ -9,7 +9,7 @@ import io.github.rubenquadros.kovibes.api.search.models.SearchPlaylistResponse
 import io.github.rubenquadros.kovibes.api.search.models.SearchTrackResponse
 import io.github.rubenquadros.kovibes.api.test.getApiResponse
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 
 internal class FakeSearchApi: SearchApi {
 
@@ -24,7 +24,7 @@ internal class FakeSearchApi: SearchApi {
         offset: Int
     ): ApiResponse<SearchTrackResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("search/tracks.json"))
+            json.decodeFromString(getExpectedResponse("search/tracks.json"))
         }
     }
 
@@ -35,7 +35,7 @@ internal class FakeSearchApi: SearchApi {
         offset: Int
     ): ApiResponse<SearchAlbumResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("search/albums.json"))
+            json.decodeFromString(getExpectedResponse("search/albums.json"))
         }
     }
 
@@ -46,7 +46,7 @@ internal class FakeSearchApi: SearchApi {
         offset: Int
     ): ApiResponse<SearchArtistResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("search/artists.json"))
+            json.decodeFromString(getExpectedResponse("search/artists.json"))
         }
     }
 
@@ -57,7 +57,7 @@ internal class FakeSearchApi: SearchApi {
         offset: Int
     ): ApiResponse<SearchPlaylistResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("search/playlists.json"))
+            json.decodeFromString(getExpectedResponse("search/playlists.json"))
         }
     }
 }

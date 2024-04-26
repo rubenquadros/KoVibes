@@ -9,7 +9,7 @@ import io.github.rubenquadros.kovibes.api.response.ErrorBody
 
 /**
  * Artist API interface provides methods using which one can get information about the artist.
- * You can get artists' top tracks, albums and also other related artists.
+ * You can get an artists top tracks, albums and also other related artists.
  *
  * Each API returns [ApiResponse].
  */

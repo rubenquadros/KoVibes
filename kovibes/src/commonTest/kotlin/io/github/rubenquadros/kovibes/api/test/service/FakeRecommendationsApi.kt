@@ -7,7 +7,7 @@ import io.github.rubenquadros.kovibes.api.request.GetRecommendationsRequest
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.test.getApiResponse
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 
 internal class FakeRecommendationsApi : RecommendationsApi {
 
@@ -19,7 +19,7 @@ internal class FakeRecommendationsApi : RecommendationsApi {
         getRecommendationsRequest: GetRecommendationsRequest
     ): ApiResponse<RecommendationsResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("recommendations/recommendations.json"))
+            json.decodeFromString(getExpectedResponse("recommendations/recommendations.json"))
         }
     }
 }

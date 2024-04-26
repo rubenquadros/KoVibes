@@ -9,16 +9,17 @@ import io.github.rubenquadros.kovibes.api.models.ArtistInfo
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.test.getApiResponse
 import io.github.rubenquadros.kovibes.api.test.getExpectedResponse
-import kotlinx.serialization.json.Json
+import io.github.rubenquadros.kovibes.api.test.json
 
 internal class FakeArtistApi : ArtistApi {
 
     companion object {
         var isSuccess: Boolean = true
     }
+
     override suspend fun getArtist(id: String): ApiResponse<ArtistInfo, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("artist/artist.json"))
+            json.decodeFromString(getExpectedResponse("artist/artist.json"))
         }
     }
 
@@ -30,7 +31,7 @@ internal class FakeArtistApi : ArtistApi {
         offset: Int
     ): ApiResponse<AlbumResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("artist/albums.json"))
+            json.decodeFromString(getExpectedResponse("artist/albums.json"))
         }
     }
 
@@ -39,13 +40,13 @@ internal class FakeArtistApi : ArtistApi {
         market: String?
     ): ApiResponse<GetArtistTopTracksResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("artist/top_tracks.json"))
+            json.decodeFromString(getExpectedResponse("artist/top_tracks.json"))
         }
     }
 
     override suspend fun getRelatedArtists(id: String): ApiResponse<GetRelatedArtistsResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
-            Json.decodeFromString(getExpectedResponse("artist/related_artists.json"))
+            json.decodeFromString(getExpectedResponse("artist/related_artists.json"))
         }
     }
 }
