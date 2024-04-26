@@ -3,6 +3,7 @@ package io.github.rubenquadros.kovibes.api.test.service
 import io.github.rubenquadros.kovibes.api.ApiResponse
 import io.github.rubenquadros.kovibes.api.artist.ArtistApi
 import io.github.rubenquadros.kovibes.api.artist.models.GetArtistTopTracksResponse
+import io.github.rubenquadros.kovibes.api.artist.models.GetRelatedArtistsResponse
 import io.github.rubenquadros.kovibes.api.models.AlbumResponse
 import io.github.rubenquadros.kovibes.api.models.ArtistInfo
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -39,6 +40,12 @@ internal class FakeArtistApi : ArtistApi {
     ): ApiResponse<GetArtistTopTracksResponse, ErrorBody> {
         return getApiResponse(isSuccess) {
             Json.decodeFromString(getExpectedResponse("artist/top_tracks.json"))
+        }
+    }
+
+    override suspend fun getRelatedArtists(id: String): ApiResponse<GetRelatedArtistsResponse, ErrorBody> {
+        return getApiResponse(isSuccess) {
+            Json.decodeFromString(getExpectedResponse("artist/related_artists.json"))
         }
     }
 }

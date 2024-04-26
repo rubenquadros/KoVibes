@@ -2,6 +2,7 @@ package io.github.rubenquadros.kovibes.api
 
 import io.github.rubenquadros.kovibes.api.artist.ArtistApi
 import io.github.rubenquadros.kovibes.api.artist.toArtistTopTracks
+import io.github.rubenquadros.kovibes.api.artist.toRelatedArtists
 import io.github.rubenquadros.kovibes.api.browse.BrowseApi
 import io.github.rubenquadros.kovibes.api.browse.toCategories
 import io.github.rubenquadros.kovibes.api.mapper.toAlbums
@@ -24,6 +25,7 @@ import io.github.rubenquadros.kovibes.api.response.Genres
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
+import io.github.rubenquadros.kovibes.api.response.RelatedArtists
 import io.github.rubenquadros.kovibes.api.response.SpotifyApiResponse
 import io.github.rubenquadros.kovibes.api.response.Tracks
 import io.github.rubenquadros.kovibes.api.search.SearchApi
@@ -163,5 +165,11 @@ internal class SpotifyServiceImpl(
         val response = artistApi.getArtistTopTracks(id, market)
 
         return response.getParsedApiResponse { it.toArtistTopTracks() }
+    }
+
+    override suspend fun getRelatedArtists(id: String): SpotifyApiResponse<RelatedArtists, ErrorBody> {
+        val response = artistApi.getRelatedArtists(id)
+
+        return response.getParsedApiResponse { it.toRelatedArtists() }
     }
 }

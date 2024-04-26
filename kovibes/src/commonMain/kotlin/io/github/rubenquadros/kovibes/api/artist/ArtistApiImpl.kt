@@ -3,6 +3,7 @@ package io.github.rubenquadros.kovibes.api.artist
 import io.github.rubenquadros.kovibes.api.ApiResponse
 import io.github.rubenquadros.kovibes.api.KtorService
 import io.github.rubenquadros.kovibes.api.artist.models.GetArtistTopTracksResponse
+import io.github.rubenquadros.kovibes.api.artist.models.GetRelatedArtistsResponse
 import io.github.rubenquadros.kovibes.api.getParsedHttpResponse
 import io.github.rubenquadros.kovibes.api.models.AlbumResponse
 import io.github.rubenquadros.kovibes.api.models.ArtistInfo
@@ -78,6 +79,18 @@ internal class ArtistApiImpl(
                             market?.let { this["market"] = market }
                         }
                     )
+                }
+            }
+        }
+
+        return response.getParsedHttpResponse()
+    }
+
+    override suspend fun getRelatedArtists(id: String): ApiResponse<GetRelatedArtistsResponse, ErrorBody> {
+        val response = withContext(dispatcher) {
+            ktorService.client.get {
+                url {
+                    path("v1/artists/$id/related-artists")
                 }
             }
         }
