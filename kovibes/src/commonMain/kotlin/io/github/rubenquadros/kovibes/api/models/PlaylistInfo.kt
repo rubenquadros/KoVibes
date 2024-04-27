@@ -24,7 +24,7 @@ internal data class PlaylistInfo(
     @SerialName("owner")
     val owner: PlaylistOwner,
     @SerialName("primary_color")
-    val primaryColor: String?,
+    val primaryColor: String? = null,
     @SerialName("public")
     val public: Boolean? = null,
     @SerialName("snapshot_id")

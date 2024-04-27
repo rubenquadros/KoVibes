@@ -44,13 +44,44 @@ class PlaylistApiTest {
     }
 
     @Test
+    fun `when playlist info spotify api responds success then result is received`() = runTest {
+        MockKtorService.isSuccess = true
+
+        val response = playlistApi.getPlaylist(
+            id = "456",
+            market = "US",
+            fields = listOf("description"),
+            additionalTypes = listOf("track")
+        )
+
+        response.assertApiResponseSuccess(
+            { it.id == "37i9dQZF1DXdGUQjVlqY2Q" }
+        )
+    }
+
+    @Test
+    fun `when playlist info spotify api responds error then failure is received`() = runTest {
+        MockKtorService.isSuccess = false
+
+        val response = playlistApi.getPlaylist(
+            id = "456",
+            market = null,
+            fields = null,
+            additionalTypes = listOf("track")
+        )
+
+        response.assertApiResponseFailure()
+    }
+
+    @Test
     fun `when playlist tracks spotify api responds success then result is received`() = runTest {
         MockKtorService.isSuccess = true
 
         val response = playlistApi.getPlaylistTracks(
             id = "123",
-            market = null,
-            fields = null,
+            market = "US",
+            fields = listOf("description"),
+            additionalTypes = listOf("track"),
             limit = 20,
             offset = 0
         )
@@ -68,6 +99,7 @@ class PlaylistApiTest {
             id = "123",
             market = null,
             fields = null,
+            additionalTypes = listOf("track"),
             limit = 20,
             offset = 0
         )
@@ -78,6 +110,10 @@ class PlaylistApiTest {
     private fun createMockPlaylistConfig() = mapOf(
         "browse/featured-playlists" to MockResponse(
             expectedSuccessResponsePath = "playlist/featured_playlists.json",
+            expectedErrorResponsePath = errorResponsePath
+        ),
+        "playlists/456" to MockResponse(
+            expectedSuccessResponsePath = "playlist/playlist.json",
             expectedErrorResponsePath = errorResponsePath
         ),
         "playlists/123/tracks" to MockResponse(

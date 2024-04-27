@@ -3,6 +3,7 @@ package io.github.rubenquadros.kovibes.api.playlist
 import io.github.rubenquadros.kovibes.api.ApiResponse
 import io.github.rubenquadros.kovibes.api.KtorService
 import io.github.rubenquadros.kovibes.api.getParsedHttpResponse
+import io.github.rubenquadros.kovibes.api.models.PlaylistInfo
 import io.github.rubenquadros.kovibes.api.playlist.models.FeaturedPlaylistsResponse
 import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -48,10 +49,36 @@ internal class PlaylistApiImpl(
         return response.getParsedHttpResponse()
     }
 
+    override suspend fun getPlaylist(
+        id: String,
+        market: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>
+    ): ApiResponse<PlaylistInfo, ErrorBody> {
+        val response = withContext(dispatcher) {
+            ktorService.client.get {
+                url {
+                    path("v1/playlists/$id")
+
+                    parameters.appendAll(
+                        StringValues.build {
+                            market?.let { this["market"] = market }
+                            fields?.let { this["fields"] = fields.joinToString { it } }
+                            this["additional_types"] = additionalTypes.joinToString { it }
+                        }
+                    )
+                }
+            }
+        }
+
+        return response.getParsedHttpResponse()
+    }
+
     override suspend fun getPlaylistTracks(
         id: String,
         market: String?,
-        fields: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>,
         limit: Int,
         offset: Int
     ): ApiResponse<PlaylistTracksResponse, ErrorBody> {
@@ -63,7 +90,8 @@ internal class PlaylistApiImpl(
                     parameters.appendAll(
                         StringValues.build {
                             market?.let { this["market"] = market }
-                            fields?.let { this["fields"] = fields }
+                            fields?.let { this["fields"] = fields.joinToString { it } }
+                            this["additional_types"] = additionalTypes.joinToString { it }
                             this["limit"] = limit.toString()
                             this["offset"] = offset.toString()
                         }

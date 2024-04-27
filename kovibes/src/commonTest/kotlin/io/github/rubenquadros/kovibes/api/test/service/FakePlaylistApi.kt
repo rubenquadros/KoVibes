@@ -1,6 +1,7 @@
 package io.github.rubenquadros.kovibes.api.test.service
 
 import io.github.rubenquadros.kovibes.api.ApiResponse
+import io.github.rubenquadros.kovibes.api.models.PlaylistInfo
 import io.github.rubenquadros.kovibes.api.playlist.PlaylistApi
 import io.github.rubenquadros.kovibes.api.playlist.models.FeaturedPlaylistsResponse
 import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
@@ -25,10 +26,22 @@ internal class FakePlaylistApi : PlaylistApi {
         }
     }
 
+    override suspend fun getPlaylist(
+        id: String,
+        market: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>
+    ): ApiResponse<PlaylistInfo, ErrorBody> {
+        return getApiResponse(isSuccess) {
+            json.decodeFromString(getExpectedResponse("playlist/playlist.json"))
+        }
+    }
+
     override suspend fun getPlaylistTracks(
         id: String,
         market: String?,
-        fields: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>,
         limit: Int,
         offset: Int
     ): ApiResponse<PlaylistTracksResponse, ErrorBody> {
