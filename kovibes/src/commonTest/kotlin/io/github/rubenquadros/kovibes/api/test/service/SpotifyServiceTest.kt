@@ -40,6 +40,26 @@ class SpotifyServiceTest {
     }
 
     @Test
+    fun `when get playlist info responds success then response is received`() = runTest {
+        FakePlaylistApi.isSuccess = true
+
+        val response = spotifyService.getPlaylist("123")
+
+        response.assertSpotifyApiSuccess(
+            { it.id == "37i9dQZF1DXdGUQjVlqY2Q" }
+        )
+    }
+
+    @Test
+    fun `when get playlist info responds error then error is received`() = runTest {
+        FakePlaylistApi.isSuccess = false
+
+        val response = spotifyService.getPlaylist("123")
+
+        response.assertSpotifyApiError()
+    }
+
+    @Test
     fun `when get playlist tracks responds success then response is received`() = runTest {
         FakePlaylistApi.isSuccess = true
 

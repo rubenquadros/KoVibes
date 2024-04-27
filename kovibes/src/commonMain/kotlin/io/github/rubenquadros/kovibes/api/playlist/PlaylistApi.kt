@@ -1,6 +1,7 @@
 package io.github.rubenquadros.kovibes.api.playlist
 
 import io.github.rubenquadros.kovibes.api.ApiResponse
+import io.github.rubenquadros.kovibes.api.models.PlaylistInfo
 import io.github.rubenquadros.kovibes.api.playlist.models.FeaturedPlaylistsResponse
 import io.github.rubenquadros.kovibes.api.playlist.models.PlaylistTracksResponse
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
@@ -27,6 +28,22 @@ internal interface PlaylistApi {
     ): ApiResponse<FeaturedPlaylistsResponse, ErrorBody>
 
     /**
+     * Get playlist API returns the information about the playlist.
+     *
+     * @param id
+     * @param market
+     * @param fields
+     * @param additionalTypes
+     * @return [PlaylistInfo] when success and [ErrorBody] when error.
+     */
+    suspend fun getPlaylist(
+        id: String,
+        market: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>
+    ): ApiResponse<PlaylistInfo, ErrorBody>
+
+    /**
      * Get playlist tracks API returns all the tracks for the current playlist.
      *
      * @param id
@@ -39,7 +56,8 @@ internal interface PlaylistApi {
     suspend fun getPlaylistTracks(
         id: String,
         market: String?,
-        fields: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>,
         limit: Int,
         offset: Int
     ): ApiResponse<PlaylistTracksResponse, ErrorBody>

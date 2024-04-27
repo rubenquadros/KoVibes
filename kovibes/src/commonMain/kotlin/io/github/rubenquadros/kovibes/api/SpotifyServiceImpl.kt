@@ -11,6 +11,7 @@ import io.github.rubenquadros.kovibes.api.browse.toCategories
 import io.github.rubenquadros.kovibes.api.mapper.toAlbum
 import io.github.rubenquadros.kovibes.api.mapper.toAlbums
 import io.github.rubenquadros.kovibes.api.mapper.toArtist
+import io.github.rubenquadros.kovibes.api.mapper.toPlayList
 import io.github.rubenquadros.kovibes.api.playlist.PlaylistApi
 import io.github.rubenquadros.kovibes.api.playlist.toFeaturedPlayLists
 import io.github.rubenquadros.kovibes.api.playlist.toPlaylistTracks
@@ -27,6 +28,7 @@ import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.Genres
 import io.github.rubenquadros.kovibes.api.response.NewAlbumReleases
+import io.github.rubenquadros.kovibes.api.response.Playlist
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
@@ -67,14 +69,27 @@ internal class SpotifyServiceImpl(
         return response.getParsedApiResponse { it.toFeaturedPlayLists() }
     }
 
+    override suspend fun getPlaylist(
+        id: String,
+        market: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>
+    ): SpotifyApiResponse<Playlist, ErrorBody> {
+        val response = playlistApi.getPlaylist(id, market, fields, additionalTypes)
+
+        return response.getParsedApiResponse { it.toPlayList() }
+    }
+
     override suspend fun getPlaylistTracks(
         id: String,
         market: String?,
-        fields: String?,
+        fields: List<String>?,
+        additionalTypes: List<String>,
         limit: Int,
         offset: Int
     ): SpotifyApiResponse<PlaylistTracks, ErrorBody> {
-        val response = playlistApi.getPlaylistTracks(id, market, fields, limit, offset)
+        val response =
+            playlistApi.getPlaylistTracks(id, market, fields, additionalTypes, limit, offset)
 
         return response.getParsedApiResponse { it.toPlaylistTracks() }
     }

@@ -11,6 +11,7 @@ import io.github.rubenquadros.kovibes.api.response.Categories
 import io.github.rubenquadros.kovibes.api.response.ErrorBody
 import io.github.rubenquadros.kovibes.api.response.Genres
 import io.github.rubenquadros.kovibes.api.response.NewAlbumReleases
+import io.github.rubenquadros.kovibes.api.response.Playlist
 import io.github.rubenquadros.kovibes.api.response.PlaylistTracks
 import io.github.rubenquadros.kovibes.api.response.Playlists
 import io.github.rubenquadros.kovibes.api.response.Recommendations
@@ -49,6 +50,24 @@ interface SpotifyService {
     ): SpotifyApiResponse<Playlists, ErrorBody>
 
     /**
+     * Get playlist API returns information about the current playlist.
+     *
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-playlist).
+     *
+     * @param id
+     * @param market
+     * @param fields
+     * @param additionalTypes
+     * @return [Playlist] when success and [ErrorBody] when error.
+     */
+    suspend fun getPlaylist(
+        id: String,
+        market: String? = null,
+        fields: List<String>? = null,
+        additionalTypes: List<String> = listOf("track")
+    ): SpotifyApiResponse<Playlist, ErrorBody>
+
+    /**
      * Get playlist tracks API returns all the tracks for a particular playlist.
      * This is a paginated API.
      *
@@ -70,7 +89,8 @@ interface SpotifyService {
     suspend fun getPlaylistTracks(
         id: String,
         market: String? = null,
-        fields: String? = null,
+        fields: List<String>? = null,
+        additionalTypes: List<String> = listOf("track"),
         limit: Int = 20,
         offset: Int = 0
     ): SpotifyApiResponse<PlaylistTracks, ErrorBody>
@@ -212,7 +232,7 @@ interface SpotifyService {
      *
      * The recommendations are returned from the information provided via [GetRecommendationsRequest].
      *
-     * See [Spotify Doc](https://developer.spotify.com/documentation/web-api/reference/get-recommendations).
+     * See the [Spotify Doc](https://developer.spotify.com/documentation/web-api/reference/get-recommendations).
      *
      * @param getRecommendationsRequest
      * @return [Recommendations] when success and [ErrorBody] when error.
@@ -224,7 +244,7 @@ interface SpotifyService {
     /**
      * Get artist API returns the information about the artist.
      *
-     * See [Spotify Doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artist).
+     * See the [Spotify Doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artist).
      *
      * @param id
      * @return [Artist] when success and [ErrorBody] when error.
@@ -241,7 +261,7 @@ interface SpotifyService {
      *
      * You can know if there are more pages from [Albums.isNext].
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums).
      *
      * @param id
      * @param includeGroups
@@ -261,7 +281,7 @@ interface SpotifyService {
     /**
      * Get artist top tracks API returns the top tracks of the artist.
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks).
      *
      * @param id
      * @param market
@@ -275,7 +295,7 @@ interface SpotifyService {
     /**
      * Get related artists API returns the artists similar to the given artist.
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists).
      *
      * @param id
      * @return [RelatedArtists] when success and [ErrorBody] when error.
@@ -285,7 +305,7 @@ interface SpotifyService {
     /**
      * Get album API returns the details about an album.
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-album).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-album).
      *
      * @param id
      * @param market
@@ -303,7 +323,7 @@ interface SpotifyService {
      *
      * You can know if there are more pages from [Tracks.isNext].
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-albums-tracks).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-an-albums-tracks).
      *
      * @param id
      * @param market
@@ -328,7 +348,7 @@ interface SpotifyService {
      *
      * You can know if there are more pages from [NewAlbumReleases.isNext].
      *
-     * See [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-new-releases).
+     * See the [Spotify doc](https://developer.spotify.com/documentation/web-api/reference/get-new-releases).
      *
      * @param limit
      * @param offset
