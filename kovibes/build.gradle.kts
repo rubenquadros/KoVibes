@@ -24,7 +24,7 @@ buildscript {
 }
 
 group = "io.github.rubenquadros"
-version = "0.0.1"
+version = "0.0.2"
 
 kotlin {
     applyDefaultHierarchyTemplate()

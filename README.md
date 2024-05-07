@@ -1,11 +1,11 @@
 # KoVibes
 KoVibes is a Kotlin wrapper for the Spotify Web API.
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.rubenquadros/kovibes/0.0.1)](https://central.sonatype.com/artifact/io.github.rubenquadros/kovibes/0.0.1)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.rubenquadros/kovibes/0.0.2)](https://central.sonatype.com/artifact/io.github.rubenquadros/kovibes/0.0.2)
 ![Github Actions](https://github.com/rubenquadros/kovibes/actions/workflows/main.yml/badge.svg?branch=main)
 [![codecov](https://codecov.io/github/rubenquadros/KoVibes/graph/badge.svg?token=UJ0687GJ7R)](https://codecov.io/github/rubenquadros/KoVibes)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.23-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
 
 ## Usage :computer:
 Include the dependency
@@ -25,15 +25,18 @@ implementation("io.github.rubenquadros:kovibes-jvm:{latest_version}")
 
 `KovibesApi` is the entry class.
 ```kotlin
-val spotifyService: SpotifyService = KoVibesApi.createSpotifyService("id", "secret")
+val config: Config = Config()
+val spotifyService: SpotifyService = KoVibesApi.createSpotifyService("id", "secret", config)
 ```
 
 `id` is the <i>Client ID</i> and `secret` is the <i>Client Secret</i>.
 
+`config` is used to configure the logging level. If you do not provide your config then the default one is used.
+
 To create your <i>Client ID</i> and <i>Client Secret</i>, please follow the
 [Spotify documentation][spotify-new-app-doc].
 
-The <i>Client ID</i> and <i>Client Secret</i> is required for authentication.
+The <i>Client ID</i> and the <i>Client Secret</i> is required for authentication.
 
 `SpotifyService` is the interface which provides all the methods to fetch the Spotify data.
 
